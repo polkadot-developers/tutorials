@@ -60,11 +60,11 @@ On the `Settings` tab ensure that you are connected to a `Local Node` or `ws://1
 Select the **Accounts** tab, you will see test accounts that you have access to. Some, like Alice
 and Bob, already have funds!
 
-![Apps UI with pre-funded accounts](assets/tutorials/first-chain/apps-prefunded.png)
+![Apps UI with pre-funded accounts](../../../assets/apps-prefunded.png)
 
 You can try to transfer some funds from Alice to Charlie by clicking the "send" button.
 
-![Balance Transfer](assets/tutorials/first-chain/apps-transfer.png)
+![Balance Transfer](../../../assets/apps-transfer.png)
 
 If everything went successfully, you should see some popup notifications claiming "Extrinsic
 Success", and of course Charlie's balance will increase.
