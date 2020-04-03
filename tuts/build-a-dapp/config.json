@@ -1,0 +1,14 @@
+{
+	"slug": "config",
+	"lang": "en",
+	"title": "Build a PoE Decentralized Application",
+	"excerpt": "Build a customized Substrate chain with its own user interface.",
+	"tags": [ "Easy", "< 1 Hour", "Prerequisites" ],
+	"versions": [ "v2.0.0-alpha.5" ],
+	"menu": [
+		{ "title": "Introduction", "slug": "index" },
+		{ "title": "Prepare to build a dApp", "slug": "prepare" },
+		{ "title": "Building a Custom Pallet", "slug": "pallet" },
+		{ "title": "Building a Custom Front End", "slug": "front-end" }
+	]
+}
