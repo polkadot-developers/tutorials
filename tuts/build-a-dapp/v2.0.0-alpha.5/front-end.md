@@ -20,11 +20,11 @@ yarn start
 
 A new tab should open in your web browser and you'll see the following interface.
 
-![Front End Template](assets/front-end-template.png)
+![Front End Template](../../../assets/front-end-template.png)
 
 You'll see a list of pre-funded accounts, and you can make token transfers between those accounts.
 
-![Balance Transfer](assets/front-end-template-balance-transfer.png)
+![Balance Transfer](../../../assets/front-end-template-balance-transfer.png)
 
 ## Add Your Custom React Component
 
@@ -187,12 +187,12 @@ Your front end template should reload when you save your changes, and you'll not
 component. Now we're ready to try out our new dApp. Select any file on your computer, and you will
 see that you can create a claim with its file digest:
 
-![Proof Of Existence Component](assets/poe-component.png)
+![Proof Of Existence Component](../../../assets/poe-component.png)
 
 If you press "Create Claim", a transaction will be dispatched to your custom Proof of Existence
 pallet, where this digest and the selected user account will be stored on chain.
 
-![Claimed File](assets/poe-claimed.png)
+![Claimed File](../../../assets/poe-claimed.png)
 
 If all went well, you should see a new `ClaimCreated` event appear in the Events component. The
 front-end automatically recognizes that your file is now claimed, and even gives you the option

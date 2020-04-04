@@ -49,7 +49,7 @@ value, which is efficient for storing on the blockchain. Any user with the origi
 that this file matches the one on the blockchain by simply recomputing the hash of the file and
 comparing it with the hash stored on chain.
 
-![File Hash](assets/file-hash.png)
+![File Hash](../../../assets/file-hash.png)
 
 To add to this, blockchains also provide a robust identity system. So when a file digest is
 stored on the blockchain, we can also record which user uploaded that digest. This allows that user
