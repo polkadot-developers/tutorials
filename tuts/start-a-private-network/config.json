@@ -1,0 +1,14 @@
+{
+	"slug": "config",
+	"lang": "en",
+	"title": "Start a Private Network",
+	"excerpt": "Learn to start a blockchain network using an out-of-the-box Substrate node.",
+	"tags": [ "Easy", "2 Hours", "Prerequisites" ],
+	"versions": [ "v2.0.0-alpha.3" ],
+	"menu": [
+		{ "title": "Overview", "slug": "index" },
+		{ "title": "Alice and Bob Start Blockchain", "slug": "alicebob" },
+		{ "title": "Generate Your Own Keys", "slug": "keygen" },
+		{ "title": "Creating Your Private Network", "slug": "customchain" }
+	]
+}
