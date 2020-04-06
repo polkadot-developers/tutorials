@@ -8,7 +8,7 @@ The Substrate runtime is composed of FRAME pallets. You can think of these palle
 pieces of logic that define what your blockchain can do! Substrate provides you with a number of
 pre-built pallets built with the FRAME framework.
 
-![Runtime Composition](../../assets/runtime.png)
+![Runtime Composition](../assets/runtime.png)
 
 For example, FRAME includes a
 [Balances](https://substrate.dev/rustdocs/master/pallet_balances/index.html) pallet that controls

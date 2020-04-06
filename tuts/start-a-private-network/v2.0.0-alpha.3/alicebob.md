@@ -97,21 +97,21 @@ Apps UI, by default, connects to the Kusama network. To configure Apps UI to con
 
   - Click on the top left network icon
 
-    ![Top Left Network Icon](../../../assets/private-network-top-left-network-icon.png)
+    ![Top Left Network Icon](../assets/private-network-top-left-network-icon.png)
 
   - A popup dropdown appears. Choose the last entry, which is a local node using default port 9944
 
-    ![Select Network](../../../assets/private-network-select-network.png)
+    ![Select Network](../assets/private-network-select-network.png)
 
   - To connect to a custom node and port, you just need to specify the endpoint by choosing `custom
     endpoint` and type in your own endpoint. In this way you can use a single instance of Apps UI to
     connect to various nodes.
 
-    ![Custom Endpoint](../../../assets/private-network-custom-endpoint.png)
+    ![Custom Endpoint](../assets/private-network-custom-endpoint.png)
 
 You should now see something like this.
 
-![No blocks in polkadot-js-apps](../../../assets/private-network-no-blocks.png)
+![No blocks in polkadot-js-apps](../assets/private-network-no-blocks.png)
 
 > **Notes**
 >

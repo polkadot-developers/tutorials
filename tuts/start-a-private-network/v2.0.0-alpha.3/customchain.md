@@ -152,7 +152,7 @@ you need to add your keys into the keystore. Remember you will need to complete 
 
 You can use the Apps UI to insert your keys into the keystore. Navigate to the "Toolbox" tab and the "RPC Call" sub-tab. Choose "author" and "insertKey". The fields can be filled like this:
 
-![Inserting a Aura key using Apps](../../../assets/private-network-apps-insert-key-aura.png)
+![Inserting a Aura key using Apps](../assets/private-network-apps-insert-key-aura.png)
 
 ```
 keytype: aura
@@ -163,7 +163,7 @@ publicKey: <your raw sr25519 key> (eg. 0x9effc1668ca381c242885516ec9fa2b19c67b66
 
 You've now successfully inserted your **aura** key. You can repeat those steps to insert your **grandpa** key (the **ed25519** key)
 
-![Inserting a Grandpa key using Apps](../../../assets/private-network-apps-insert-key.png)
+![Inserting a Grandpa key using Apps](../assets/private-network-apps-insert-key.png)
 
 ```
 keytype: gran

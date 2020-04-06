@@ -30,7 +30,7 @@ these projects are forked from already existing blockchain repositories. For ins
 * The Bitcoin repository was forked to create: Litecoin, ZCash, Namecoin, Bitcoin Cash, etc...
 * The Ethereum repository was forked to create: Quorem, POA Network, KodakCoin, Musicoin, etc...
 
-![Blockchain Project Repository Forks](../../../assets/forks.png)
+![Blockchain Project Repository Forks](../assets/forks.png)
 
 Building blockchains in this way has serious limitations as these existing platform were not
 designed with modification in mind.
