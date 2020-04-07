@@ -4,7 +4,7 @@
 	"title": "Start a Private Network",
 	"excerpt": "Learn to start a blockchain network using an out-of-the-box Substrate node.",
 	"tags": [ "Easy", "2 Hours", "Prerequisites" ],
-	"versions": [ "v2.0.0-alpha.3" ],
+	"versions": [ "v2.0.0-alpha.5" ],
 	"menu": [
 		{ "title": "Overview", "slug": "index" },
 		{ "title": "Alice and Bob Start Blockchain", "slug": "alicebob" },
