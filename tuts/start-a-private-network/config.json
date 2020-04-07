@@ -2,7 +2,7 @@
 	"slug": "config",
 	"lang": "en",
 	"title": "Start a Private Network",
-	"excerpt": "Learn to start a blockchain network using an out-of-the-box Substrate node.",
+	"excerpt": "Start a blockchain network using an out-of-the-box Substrate node.",
 	"tags": [ "Easy", "2 Hours", "Prerequisites" ],
 	"versions": [ "v2.0.0-alpha.5" ],
 	"menu": [
