@@ -1,7 +1,7 @@
 {
 	"slug": "config",
 	"lang": "en",
-	"title": "Creating Your First Substrate Chain",
+	"title": "Create Your First Substrate Chain",
 	"excerpt": "A minimal, end-to-end guide to build and interact with your first custom Substrate chain.",
 	"tags": [ "Easy", "< 1 Hour", "No Prerequisites" ],
 	"versions": [ "v2.0.0-alpha.5", "v2.0.0-alpha.3" ],
