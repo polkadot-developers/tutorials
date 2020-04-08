@@ -1,0 +1,11 @@
+{
+	"slug": "config",
+	"lang": "en",
+	"title": "Write a Pallet in its Own Crate",
+	"excerpt": "Make your pallet re-usable by packaging it in its own crate and publishing it.",
+	"tags": [ "Medium", "2 Hours", "No Prerequisites" ],
+	"versions": [ "v2.0.0-alpha.5" ],
+	"menu": [
+		{ "title": "Write a Pallet in its Own Crate", "slug": "index" }
+	]
+}
