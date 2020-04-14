@@ -13,7 +13,7 @@ This guide will show you how you can add the [Contracts pallet](https://substrat
 You should already have version `v2.0.0-alpha.5` of the [Substrate Node
 Template](https://github.com/substrate-developer-hub/substrate-node-template) compiled on your
 computer from when you completed the [Creating Your First Substrate Chain
-Tutorial](tutorials/creating-your-first-substrate-chain/index.md). If you do not, please complete that
+Tutorial](../creating-your-first-substrate-chain/index.md). If you do not, please complete that
 tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template according to the instructions in its readme.
