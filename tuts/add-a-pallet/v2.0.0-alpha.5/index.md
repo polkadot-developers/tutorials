@@ -4,7 +4,7 @@ lang: en
 title: Add a Pallet
 ---
 
-The [Substrate node template](https://github.com/substrate-developer-hub/substrate-node-template) provides a minimal working runtime which you can use to quickly get started building your own custom blockchain. However, in the attempts to remain minimal, it does not include most of the pallets from ([FRAME](../../kb/runtime/frame)).
+The [Substrate node template](https://github.com/substrate-developer-hub/substrate-node-template) provides a minimal working runtime which you can use to quickly get started building your own custom blockchain. However, in the attempts to remain minimal, it does not include most of the pallets from ([FRAME](/kb/runtime/frame)).
 
 This guide will show you how you can add the [Contracts pallet](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_contracts/index.html) to your runtime in order to allow your blockchain to support Wasm smart contracts. You can follow similar patterns to add additional FRAME pallets to your runtime, however you should note that each pallet is a little different in terms of the specific configuration settings needed to use it correctly.
 
@@ -13,7 +13,7 @@ This guide will show you how you can add the [Contracts pallet](https://substrat
 You should already have version `v2.0.0-alpha.5` of the [Substrate Node
 Template](https://github.com/substrate-developer-hub/substrate-node-template) compiled on your
 computer from when you completed the [Creating Your First Substrate Chain
-Tutorial](../creating-your-first-substrate-chain/index.md). If you do not, please complete that
+Tutorial](/tutorials/creating-your-first-substrate-chain/index.md). If you do not, please complete that
 tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template according to the instructions in its readme.
