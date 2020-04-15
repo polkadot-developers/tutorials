@@ -24,22 +24,31 @@ You should see something like this if your node is running successfully:
 ```
 $ ./target/release/node-template --dev
 
-2020-03-11 07:42:55 Running in --dev mode, RPC CORS has been disabled.
-2020-03-11 07:42:55 Substrate Node
-2020-03-11 07:42:55   version 2.0.0-alpha.5-da88e4a-x86_64-linux-gnu
-2020-03-11 07:42:55   by Anonymous, 2017-2020
-2020-03-11 07:42:55 Chain specification: Development
-2020-03-11 07:42:55 Node name: deranged-faucet-4432
-2020-03-11 07:42:55 Roles: AUTHORITY
-2020-03-11 07:42:55 Initializing Genesis block/state (state: 0x3e8a…1c6b, header-hash: 0x1990…e24d)
-...
-2020-03-11 07:43:00 Imported #1 (0x857f…9b4e)
-2020-03-11 07:43:00 Idle (0 peers), best: #1 (0x857f…9b4e), finalized #0 (0x1990…e24d), ⬇ 0 ⬆ 0
-2020-03-11 07:43:05 Idle (0 peers), best: #1 (0x857f…9b4e), finalized #0 (0x1990…e24d), ⬇ 0 ⬆ 0
-2020-03-11 07:43:06 Starting consensus session on top of parent 0x857f7b9091f37926a67c403ef0a19fdb31b31491dbc1d2a5e70c000f23c99b4e
-2020-03-11 07:43:06 Prepared block for proposing at 2 [hash: 0xf2b6f619c42824690c39c022af815fd59e7497b7ca321cf866bd9a16aed75ae7; parent_hash: 0x857f…9b4e; extrinsics (1): [0x5283…d9f3]]
-2020-03-11 07:43:06 Pre-sealed block for proposal at 2. Hash now 0x4db38cd7afa731a88cd0cf963de1bf728d8cee96ea5db1718b7c32121aa286a6, previously 0xf2b6f619c42824690c39c022af815fd59e7497b7ca321cf866bd9a16aed75ae7.
-2020-03-11 07:43:06 Imported #2 (0x4db3…86a6)
+2020-04-15 13:46:00 Running in --dev mode, RPC CORS has been disabled.
+2020-04-15 13:46:00 Substrate Node
+2020-04-15 13:46:00 ✌️  version 2.0.0-alpha.6-c1b33f8-x86_64-linux-gnu
+2020-04-15 13:46:00 ❤️  by Anonymous, 2017-2020
+2020-04-15 13:46:00 📋 Chain specification: Development
+2020-04-15 13:46:00 🏷  Node name: abrasive-sand-1388
+2020-04-15 13:46:00 👤 Role: AUTHORITY
+2020-04-15 13:46:00 ⛓  Native runtime: node-template-1:1(node-template-1)
+2020-04-15 13:46:00 🔨 Initializing Genesis block/state (state: 0x4603…c0c6, header-hash: 0x7fd5…54f7)
+2020-04-15 13:46:00 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-04-15 13:46:00 ⏱ Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-04-15 13:46:00 📦 Highest known block at #0
+2020-04-15 13:46:00 Using default protocol ID "sup" because none is configured in the chain specs
+2020-04-15 13:46:00 🏷  Local node identity is: QmStkPyqTUosZQvYyGzsQgbAnUv7xqE7VBYfThkePMzvuR
+2020-04-15 13:46:00 〽 Prometheus server started at 127.0.0.1:9615
+2020-04-15 13:46:05 💤 Idle (0 peers), best: #0 (0x7fd5…54f7), finalized #0 (0x7fd5…54f7), ⬇ 0 ⬆ 0
+2020-04-15 13:46:06 🙌 Starting consensus session on top of parent 0x7fd5647d42940dd960cd19612679eed979c542f42efb4b5078e8d00dbfd754f7
+2020-04-15 13:46:06 🎁 Prepared block for proposing at 1 [hash: 0x1ff8fd2f064782f65adabc3e79f75754b0cbb31ba5ea87e6ec37adcc2aa0d9fc; parent_hash: 0x7fd5…54f7; extrinsics (1): [0x851d…c946]]
+2020-04-15 13:46:06 🔖 Pre-sealed block for proposal at 1. Hash now 0x2fc528b959cad12872c478a397526ad119ff1d309fd3ddd33f7e15d1dee3d4da, previously 0x1ff8fd2f064782f65adabc3e79f75754b0cbb31ba5ea87e6ec37adcc2aa0d9fc.
+2020-04-15 13:46:06 🙌 Starting consensus session on top of parent 0x2fc528b959cad12872c478a397526ad119ff1d309fd3ddd33f7e15d1dee3d4da
+2020-04-15 13:46:06 ✨ Imported #1 (0x2fc5…d4da)
+2020-04-15 13:46:06 🎁 Prepared block for proposing at 2 [hash: 0x08ec27919011a0ce00ea94e1d3b9647b13392ce0643c8b10f292415b81c34b4f; parent_hash: 0x2fc5…d4da; extrinsics (1): [0xd56e…2407]]
+2020-04-15 13:46:06 🔖 Pre-sealed block for proposal at 2. Hash now 0x6e845b7ebeec35587cc0ff89c815d0930e30ec43e5271d4fa9ecedfbcd159c63, previously 0x08ec27919011a0ce00ea94e1d3b9647b13392ce0643c8b10f292415b81c34b4f.
+2020-04-15 13:46:06 ✨ Imported #2 (0x6e84…9c63)
+2020-04-15 13:46:10 💤 Idle (0 peers), best: #2 (0x6e84…9c63), finalized #0 (0x7fd5…54f7), ⬇ 0 ⬆ 0
 ```
 
 If the number after `best:` is increasing, your blockchain is producing new blocks!
@@ -84,9 +93,9 @@ You have launched a working Substrate-based blockchain, attached a user interfac
 
 Your next step may be:
 
-* Decentralize your network with more nodes in the [Start a Private Network](tutorials/start-a-private-network/index.md) tutorial.
-* Add custom functionality in the [Build a dApp](tutorials/build-a-dapp/index.md) tutorial.
+* Decentralize your network with more nodes in the [Start a Private Network](/tutorials/start-a-private-network/v2.0.0-alpha.6) tutorial.
+* Add custom functionality in the [Build a dApp](/tutorials/build-a-dapp/v2.0.0-alpha.6) tutorial.
 
 If you experienced any issues with this tutorial or want to provide feedback, feel free to [open a
 GitHub
-issue](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/issues/new) or reach out on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
+issue](https://github.com/substrate-developer-hub/tutorials/issues/new) or reach out on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
