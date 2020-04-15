@@ -20,7 +20,7 @@ We only expect that:
 * You are open to learning about the bleeding edge of blockchain development.
 
 If you run into an issue on this tutorial, **we are here to help!** You can [create a new
-issue](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/issues/new) or
+issue](https://github.com/substrate-developer-hub/tutorials/issues/new) or
 contact us on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
 
 ## What you will be doing
