@@ -501,7 +501,7 @@ In the `Cargo.toml` file of the Substrate node runtime, you will see an example 
 - [A minimalist tutorial on writing your runtime pallet in its own package](creating-a-runtime-module).
 - With your node now capable of running smart contracts, go learn to write your first smart contract in [Substrate Contracts workshop](https://substrate.dev/substrate-contracts-workshop).
 - [Substrate Recipes](https://substrate.dev/recipes/) offers detailed tutorials  about writing [Runtime APIs](https://substrate.dev/recipes/3-entrees/runtime-api.html) and [Custom RPCs](https://substrate.dev/recipes/3-entrees/custom-rpc.html) like the onse explored in this tutorial.
-- Understand the chain-spec file to customize your [Genesis Configuration](docs/development/deployment/chain-spec).
+- Understand the chain-spec file to customize your [Genesis Configuration](/kb/integrate/chain-spec).
 
 ### References
 
