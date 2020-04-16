@@ -9,10 +9,10 @@ crate, and include it in a node based on the `substrate-node-template`.
 
 ## Install the Node Template
 
-You should already have version `v2.0.0-alpha.5` of the [Substrate Node
+You should already have version `v2.0.0-alpha.6` of the [Substrate Node
 Template](https://github.com/substrate-developer-hub/substrate-node-template) compiled on your
-computer from when you completed the [Creating Your First Substrate Chain
-Tutorial](tutorials/creating-your-first-substrate-chain/index.md). If you do not, please complete that
+computer from when you completed the [Create Your First Substrate Chain
+Tutorial](tutorials/create-your-first-substrate-chain/v2.0.0-alpha.6). If you do not, please complete that
 tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template according to the instructions in its readme.
@@ -28,19 +28,12 @@ Clone the Substrate pallet template in the `pallets` directory of your node temp
 
 ```bash
 cd pallets
-git clone -b v2.0.0-alpha.5 https://github.com/substrate-developer-hub/substrate-pallet-template test-pallet
+git clone -b v2.0.0-alpha.6 https://github.com/substrate-developer-hub/substrate-pallet-template test-pallet
 ```
 
 > In this tutorial we have placed the pallet template _inside_ the node template's directory structure. This pattern is not required, and you can place the pallet template anywhere you like. Another popular option would be as a _sibling_ to the node template.
 
 ## The Substrate Pallet Template
-
-You should be able to successfully compile the Substrate pallet template with:
-
-```bash
-cd test-pallet
-cargo build --release
-```
 
 Let's explore the Substrate pallet template, starting with the `Cargo.toml`
 file.
@@ -57,10 +50,28 @@ The beginning of the `Cargo.toml` now looks like:
 
 ```toml
 [package]
-name = "test-pallet"
-version = "2.0.0"
-authors = ["Your Name"]
-edition = "2018"
+authors = ['Anonymous']
+description = 'FRAME pallet template'
+edition = '2018'
+homepage = 'https://substrate.dev'
+license = 'Unlicense'
+name = 'test-pallet'
+repository = 'https://github.com/substrate-developer-hub/substrate-pallet-template'
+version = '2.0.0-alpha.6'
+```
+
+### Compile the Template Pallet
+
+> If you have been following the steps of this tutorial and cloned the template pallet into the `pallets` directory of
+your node template, you will need to add the template pallet to the `workspace.members` array of the `Cargo.toml` file
+in the root of the node template directory; you will need to include the path and the name of the package, so add this
+element to the `members` array: `'pallets/test-pallet',`.
+
+You should be able to successfully compile the Substrate pallet template with:
+
+```bash
+cd test-pallet
+cargo build --release
 ```
 
 ### Your Pallet's `std` Feature
@@ -85,8 +96,7 @@ default = ['std']
 std = [
     'codec/std',
     'frame-support/std',
-    'safe-mix/std',
-    'system/std',
+    'frame-system/std',
 ]
 ```
 
@@ -103,10 +113,10 @@ people build their own FRAME-based runtimes, they will also have dependencies on
 
 [dependencies.frame-support]
 default-features = false
-version = '2.0.0-alpha.5'
+version = '2.0.0-alpha.6'
 ```
 
-From the above snippet, we see that this pallet template depends on version `2.0.0-alpha.5` of the low-level libraries. Thus it can be used in runtimes that also depend on `2.0.0-alpha.5`.
+From the above snippet, we see that this pallet template depends on version `2.0.0-alpha.6` of the low-level libraries. Thus it can be used in runtimes that also depend on `2.0.0-alpha.6`.
 
 ### Your Pallet's Dev Dependencies
 
@@ -121,7 +131,7 @@ the actual pallet itself.
 
 [dev-dependencies.sp-core]
 default-features = false
-version = '2.0.0-alpha.5'
+version = '2.0.0-alpha.6'
 ```
 
 You can confirm that the tests in the Substrate pallet template pass with:
@@ -197,7 +207,7 @@ construct_runtime!(
 At this point you have the pallet packaged up as it's own crate and included in
 your node's runtime.
 
-1. Compile and run your node with:
+1. Make sure you're back in the node template's root directory, then compile and run your node with:
 
     ```bash
     cargo build --release
@@ -280,16 +290,9 @@ lines of code in their runtime's `Cargo.toml` files and updating their runtime's
 
 ### Learn More
 
-- We have [plenty of tutorials](https://substrate.dev/en/tutorials) to showcase
-  Substrate development concepts and techniques.
+- We have [plenty of tutorials](/tutorials) to showcase Substrate development concepts and techniques.
 - For more information about runtime development tips and patterns, refer to our
   [Substrate Recipes](https://substrate.dev/recipes/).
-
-### Examples
-
-- Tutorial on [adding a `Contracts` Pallet into
-  runtime](tutorials/adding-a-module-to-your-runtime), so your node can run
-  smart contract.
 
 ### References
 
