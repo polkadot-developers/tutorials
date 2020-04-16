@@ -10,8 +10,8 @@ In this tutorial we will learn and practice how to start a blockchain network wi
 
 You should already have version `v2.0.0-alpha.5` of the [Substrate Node
 Template](https://github.com/substrate-developer-hub/substrate-node-template) compiled on your
-computer from when you completed the [Creating Your First Substrate Chain
-Tutorial](tutorials/creating-your-first-substrate-chain/index.md). If you do not, please complete that
+computer from when you completed the [Create Your First Substrate Chain
+Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-alpha.5). If you do not, please complete that
 tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template according to the instructions in its readme.

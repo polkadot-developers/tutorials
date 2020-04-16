@@ -31,7 +31,7 @@ Alice (or whomever is playing her) should run these commands from node-template 
   --port 30333 \
   --ws-port 9944 \
   --rpc-port 9933 \
-  --telemetry-url ws://telemetry.polkadot.io:1024 \
+  --telemetry-url 'ws://telemetry.polkadot.io:1024 0' \
   --validator
 ```
 
@@ -133,7 +133,7 @@ His command will look very similar.
   --port 30334 \
   --ws-port 9945 \
   --rpc-port 9934 \
-  --telemetry-url ws://telemetry.polkadot.io:1024 \
+  --telemetry-url 'ws://telemetry.polkadot.io:1024 0' \
   --validator \
   --bootnodes /ip4/<Alices IP Address>/tcp/<Alices Port>/p2p/<Alices Peer ID>
 ```

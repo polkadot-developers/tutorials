@@ -145,7 +145,7 @@ Most of these options are already explained above, but there are a few points wo
 * Because these two nodes are running on the same physical machine, Bob must specify a different `--base-path`,
 `--port`, `--ws-port`, and `--rpc-port`.
 * Bob has added the `--bootnodes` flag and specified a single boot node, namely Alice's. He must correctly specify these three pieces of information which Alice can supply for him.
-  * Alice's IP Address, in the form `127.0.0.1`
+  * Alice's IP Address, probably `127.0.0.1`
   * Alice's Port, probably `30333`
   * Alice's Peer ID, copied from her log output. (`QmSPiPNhFyDUEugSPM9dN2TbD9qzsA1xbiHkCeLsrPZ47m`
   in the example output above.)
