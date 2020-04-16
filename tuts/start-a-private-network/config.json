@@ -9,6 +9,7 @@
 		{ "title": "Overview", "slug": "index" },
 		{ "title": "Alice and Bob Start Blockchain", "slug": "alicebob" },
 		{ "title": "Generate Your Own Keys", "slug": "keygen" },
-		{ "title": "Creating Your Private Network", "slug": "customchain" }
+		{ "title": "Create a Custom Chain Spec", "slug": "customspec"},
+		{ "title": "Launch Your Private Network", "slug": "customchain" }
 	]
 }
