@@ -251,18 +251,18 @@ To go into a bit more detail here, we see from the documentation that `type Curr
 
 ```rust
 // From the reference documentation, also found in `contracts` pallet:
-//   https://github.com/paritytech/substrate/blob/master/frame/contracts/src/lib.rs
+//   https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/frame/contracts/src/lib.rs
 
 type Currency: Currency<Self::AccountId>
 ```
 
 Fortunately, the Balances pallet implements this type, so we can simply reference `Balances` to gain access to it.
 
-Similarly, `type DetermineContractAddress` requires the trait `ContractAddressFor`. The Contracts pallet itself implements a type with this trait in `contract::SimpleAddressDeterminator`, thus we can use that implementation to satisfy our `contracts::Trait`. At this point, I really recommend you explore the source code of the [Contracts pallet](https://github.com/paritytech/substrate/blob/master/frame/contracts/src/lib.rs) if things don't make sense or you want to gain a deeper understanding.
+Similarly, `type DetermineContractAddress` requires the trait `ContractAddressFor`. The Contracts pallet itself implements a type with this trait in `contract::SimpleAddressDeterminator`, thus we can use that implementation to satisfy our `contracts::Trait`. At this point, I really recommend you explore the source code of the [Contracts pallet](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/frame/contracts/src/lib.rs) if things don't make sense or you want to gain a deeper understanding.
 
 ### Adding Contracts to the `construct_runtime!` Macro
 
-Next, we need to add the pallet to the `construct_runtime!` macro. For this, we need to determine the types that the pallet exposes so that we can tell the our runtime that they exist. The complete list of possible types can be found in the [`construct_runtime!` macro documentation](https://substrate.dev/rustdocs/v2.0.0-alpha.5/frame_support/macro.construct_runtime.html).
+Next, we need to add the pallet to the `construct_runtime!` macro. For this, we need to determine the types that the pallet exposes so that we can tell the our runtime that they exist. The complete list of possible types can be found in the [`construct_runtime!` macro documentation](https://docs.rs/frame-support/2.0.0-alpha.6/frame_support/macro.construct_runtime.html).
 
 If we look at the Contracts pallet in detail, we know it has:
 
@@ -313,7 +313,7 @@ We start by adding the required API dependencies in our `Cargo.toml`.
 [dependencies.contracts-rpc-runtime-api]
 default-features = false
 package = 'pallet-contracts-rpc-runtime-api'
-version = '0.8.0-alpha.5'
+version = '0.8.0-alpha.6'
 ```
 
 **`runtime/Cargo.toml`**
@@ -403,8 +403,8 @@ into that runtime API. Because we are now working in the outer node, we are not 
 [dependencies]
 #--snip--
 jsonrpc-core = '14.0.5'
-pallet-contracts-rpc = '0.8.0-alpha.5'
-sc-rpc = '2.0.0-alpha.5'
+pallet-contracts-rpc = '0.8.0-alpha.6'
+sc-rpc = '2.0.0-alpha.6'
 ```
 
 **`node/src/service.rs`**
@@ -437,7 +437,7 @@ Substrate provides an RPC to interact with our node. However, it does not contai
 
 ### Genesis Configuration
 
-Not all pallets will have a genesis configuration, but if yours does, you can use its documentation to learn about it. For example, [`pallet_contracts::GenesisConfig` documentation](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_contracts/struct.GenesisConfig.html) describes all the fields you need to define for the Contracts pallet.
+Not all pallets will have a genesis configuration, but if yours does, you can use its documentation to learn about it. For example, [`pallet_contracts::GenesisConfig` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/struct.GenesisConfig.html) describes all the fields you need to define for the Contracts pallet.
 
 Genesis configurations are controlled in `node/src/chain_spec.rs`. We need to modify this file to include the `ContractsConfig` type and the contract price units at the top:
 
@@ -456,14 +456,14 @@ Then inside the `testnet_genesis` function we need to add the contract configura
 fn testnet_genesis(initial_authorities: Vec<(AuraId, GrandpaId)>,
     root_key: AccountId,
     endowed_accounts: Vec<AccountId>,
-    enable_println: bool) -> GenesisConfig {
+    _enable_println: bool) -> GenesisConfig {
     /*** Add This Block ***/
     let mut contracts_config = ContractsConfig {
         current_schedule: Default::default(),
         gas_price: 1 * MILLICENTS,
     };
     // IMPORTANT: println should only be enabled on development chains!
-    contracts_config.current_schedule.enable_println = enable_println;
+    contracts_config.current_schedule.enable_println = _enable_println;
     /*** End Added Block ***/
 
     GenesisConfig {
@@ -492,17 +492,17 @@ Before running the chain, we first need to purge the chain to remove the old run
 
 ## Adding Other FRAME pallets
 
-In this guide, we walked through specifically how to import the Contracts pallet, but as mentioned in the beginning of this guide, each pallet will be a little different. Have no fear, you can always refer to the [demonstration Substrate node runtime](https://github.com/paritytech/substrate/blob/master/bin/node/runtime/) which includes nearly every pallet in the FRAME.
+In this guide, we walked through specifically how to import the Contracts pallet, but as mentioned in the beginning of this guide, each pallet will be a little different. Have no fear, you can always refer to the [demonstration Substrate node runtime](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/bin/node/runtime/) which includes nearly every pallet in the FRAME.
 
 In the `Cargo.toml` file of the Substrate node runtime, you will see an example of how to import each of the different pallets, and in the `lib.rs` file you will find how to add each pallet to your runtime. You can basically copy what was done there to your own runtime.
 
 ### Learn More
 
-- [A minimalist tutorial on writing your runtime pallet in its own package](creating-a-runtime-module).
-- With your node now capable of running smart contracts, go learn to write your first smart contract in [Substrate Contracts workshop](https://substrate.dev/substrate-contracts-workshop).
-- [Substrate Recipes](https://substrate.dev/recipes/) offers detailed tutorials  about writing [Runtime APIs](https://substrate.dev/recipes/3-entrees/runtime-api.html) and [Custom RPCs](https://substrate.dev/recipes/3-entrees/custom-rpc.html) like the onse explored in this tutorial.
+- [A minimalist tutorial on writing your runtime pallet in its own package](/tutorials/pallet-in-own-crate/v2.0.0-alpha.6).
+- With your node now capable of running smart contracts, go learn about [Substrate ink! smart contracts](/kb/smart-contracts).
+- [Substrate Recipes](https://substrate.dev/recipes/) offers detailed tutorials  about writing [Runtime APIs](https://substrate.dev/recipes/3-entrees/runtime-api.html) and [Custom RPCs](https://substrate.dev/recipes/3-entrees/custom-rpc.html) like the ones explored in this tutorial.
 - Understand the [Chain Spec](/kb/integrate/chain-spec) file to customize your Genesis Configuration.
 
 ### References
 
-- [FRAME `Contracts` Pallet API](https://substrate.dev/rustdocs/master/pallet_contracts/index.html)
+- [FRAME `Contracts` Pallet API](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/index.html)
