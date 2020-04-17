@@ -11,17 +11,17 @@ pre-built pallets for use in FRAME-based runtimes.
 ![Runtime Composition](../assets/runtime.png)
 
 For example, FRAME includes a
-[Balances](https://substrate.dev/rustdocs/v2.0.0-alpha.6/pallet_balances/index.html) pallet that controls
+[Balances](https://docs.rs/pallet-balances/2.0.0-alpha.6/pallet_balances/) pallet that controls
 the underlying currency of your blockchain by managing the _balance_ of all the accounts in your
 system.
 
 If you want to add smart contract functionality to your blockchain, you simply need to include the
-[Contracts](https://substrate.dev/rustdocs/v2.0.0-alpha.6/pallet_contracts/index.html) pallet.
+[Contracts](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/) pallet.
 
 Even things like on-chain governance can be added to your blockchain by including pallets like
-[Democracy](https://substrate.dev/rustdocs/v2.0.0-alpha.6/pallet_democracy/index.html),
-[Elections](https://substrate.dev/rustdocs/v2.0.0-alpha.6/pallet_elections/index.html), and
-[Collective](https://substrate.dev/rustdocs/v2.0.0-alpha.6/pallet_collective/index.html).
+[Democracy](https://docs.rs/pallet-democracy/2.0.0-alpha.6/pallet_democracy/),
+[Elections](https://docs.rs/pallet-elections/2.0.0-alpha.6/pallet_elections/), and
+[Collective](https://docs.rs/pallet-collective/2.0.0-alpha.6/pallet_collective/).
 
 The goal of this tutorial is to teach you how to create your own Substrate pallet to include
 in your custom blockchain! The `substrate-node-template` comes with a template pallet that
@@ -278,7 +278,7 @@ decl_module! {
 ```
 
 > The functions you see here do not have return types explicitly stated. In reality they all return
-> [`DispatchResult`](https://substrate.dev/rustdocs/v2.0.0-alpha.6/frame_support/dispatch/type.DispatchResult.html)s.
+> [`DispatchResult`](https://docs.rs/frame-support/2.0.0-alpha.6/frame_support/dispatch/type.DispatchResult.html)s.
 > This return type is added on your behalf by the `decl_module!` macro.
 
 ## Compile Your New Pallet
