@@ -17,7 +17,7 @@ Subkey is a tool the generates keys specifically designed to be used with Substr
 Begin by compiling and installing the utility. This may take up to 15 minutes or so.
 
 ```bash
-cargo install --force subkey --git https://github.com/paritytech/substrate --tag v2.0.0-alpha.5
+cargo install --force subkey --git https://github.com/paritytech/substrate --tag v2.0.0-alpha.6
 ```
 
 We will need to generate at least **2** keys from each type. Every node will need to have its own keys.
@@ -27,21 +27,29 @@ used by Aura for block production.
 
 ```bash
 $ subkey --sr25519 generate
-Secret phrase `keep matrix knee meat awake frown rubber position federal easily strategy inhale` is account:
-  Secret seed: 0xb5d5cda89e139aecb67181e11d6d2d90a0cc80106afa035ab19264af7b5e5c0b
-  Public key (hex): 0x8ed5f822065e5824d3e37d9ea36a81eacb98ff1a6fa04bb87d2fa4915e9ed147
-  Address (SS58): 5FHzDem7A5aAq79tuEN9xJuNPXiYfmRQamhumTuqu6i57BuU
+
+Secret phrase `infant salmon buzz patrol maple subject turtle cute legend song vital leisure` is account:
+  Network ID/version: substrate
+  Secret seed:        0xa2b0200f9666b743402289ca4f7e79c9a4a52ce129365578521b0b75396bd242
+  Public key (hex):   0x0a11c9bcc81f8bd314e80bc51cbfacf30eaeb57e863196a79cccdc8bf4750d21
+  Account ID:         0x0a11c9bcc81f8bd314e80bc51cbfacf30eaeb57e863196a79cccdc8bf4750d21
+  SS58 Address:       5CHucvTwrPg8L2tjneVoemApqXcUaEdUDsCEPyE7aDwrtR8D
+
 ```
 
 Now see the `ed25519` key and address associated with the same mnemonic. This key will be used by
 GRANDPA for block finalization.
 
 ```bash
-$ subkey --ed25519 inspect "keep matrix knee meat awake frown rubber position federal easily strategy inhale"
-Secret phrase `keep matrix knee meat awake frown rubber position federal easily strategy inhale` is account:
-  Secret seed: 0xb5d5cda89e139aecb67181e11d6d2d90a0cc80106afa035ab19264af7b5e5c0b
-  Public key (hex): 0xfe68fdff17960cb8d45d861396a64d4086997353849403ee3352996ec68ff4af
-  Address (SS58): 5HpHD5YseSWbHfni43Zm2SjtpyqSVmuaNhKkVmivp8L93Trs
+$ subkey --ed25519 inspect "infant salmon buzz patrol maple subject turtle cute legend song vital leisure"
+
+Secret phrase `infant salmon buzz patrol maple subject turtle cute legend song vital leisure` is account:
+  Network ID/version: substrate
+  Secret seed:        0xa2b0200f9666b743402289ca4f7e79c9a4a52ce129365578521b0b75396bd242
+  Public key (hex):   0x1a0e2bf1e0195a1f5396c5fd209a620a48fe90f6f336d89c89405a0183a857a3
+  Account ID:         0x1a0e2bf1e0195a1f5396c5fd209a620a48fe90f6f336d89c89405a0183a857a3
+  SS58 Address:       5CesK3uTmn4NGfD3oyGBd1jrp4EfRyYdtqL3ERe9SXv8jUHb
+
 ```
 
 ## Option 2: Polkadot-JS Apps

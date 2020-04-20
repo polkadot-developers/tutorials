@@ -4,7 +4,7 @@
 	"title": "Add a Pallet to your Runtime",
 	"excerpt": "Add the contracts pallet to your Substrate node template",
 	"tags": [ "Medium", "2 Hours", "No Prerequisites" ],
-	"versions": [ "v2.0.0-alpha.5" ],
+	"versions": [ "v2.0.0-alpha.6", "v2.0.0-alpha.5" ],
 	"menu": [
 		{ "title": "Add a Pallet", "slug": "index" }
 	]
