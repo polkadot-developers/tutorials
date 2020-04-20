@@ -412,7 +412,7 @@ sc-rpc = '2.0.0-alpha.6'
 macro_rules! new_full_start {
 	($config:expr) => {{
         /*** Add This Line ***/
-        type RpcExtension = jsonrpc_core::IoHandler<sc_rpc::Metadata>;
+        use jsonrpc_core::IoHandler;
 ```
 
 Substrate provides an RPC to interact with our node. However, it does not contain access to the contracts pallet by default. To interact with this pallet, we have to extend the existing RPC and add the contracts pallet along with its API.
