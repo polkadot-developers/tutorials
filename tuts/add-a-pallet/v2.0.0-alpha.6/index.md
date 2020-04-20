@@ -422,12 +422,12 @@ Substrate provides an RPC to interact with our node. However, it does not contai
                 Ok(import_queue)
             })? // <- Remove semi-colon
             /*** Add This Block ***/
-            .with_rpc_extensions(|builder| -> Result<RpcExtension, _> {
-                use pallet_contracts_rpc::{Contracts, ContractsApi};
-                let mut io = jsonrpc_core::IoHandler::default();
-                io.extend_with(
-                ContractsApi::to_delegate(Contracts::new(builder.client().clone()))
-                );
+            .with_rpc_extensions(|builder| -> Result<IoHandler<sc_rpc::Metadata>, _> {
+                let handler = pallet_contracts_rpc::Contracts::new(builder.client().clone());
+                let delegate = pallet_contracts_rpc::ContractsApi::to_delegate(handler);
+
+                let mut io = IoHandler::default();
+                io.extend_with(delegate);
                 Ok(io)
             })?;
             /*** End Added Block ***/
