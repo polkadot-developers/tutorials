@@ -1,0 +1,14 @@
+{
+	"slug": "config",
+	"lang": "en",
+	"title": "Clone a Live Chain",
+	"excerpt": "Clone a Live Substrate Chain",
+	"tags": [ "Medium", "2 Hours", "Prerequisites" ],
+	"versions": [ "v2.0.0-alpha.6" ],
+	"menu": [
+		{ "title": "Overview", "slug": "index" },
+		{ "title": "Start the Original Chain", "slug": "original-chain" },
+		{ "title": "Export Chain State", "slug": "export" },
+		{ "title": "Start the Clone Chain", "slug": "clone-chain"}
+	]
+}
