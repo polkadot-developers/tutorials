@@ -127,7 +127,7 @@ default = ['std']
 std = [
     'codec/std',
     'frame-support/std',
-    'system/std',
+    'frame-system/std',
     'sp-std/std',          <-- This line is new
 ]
 ```
