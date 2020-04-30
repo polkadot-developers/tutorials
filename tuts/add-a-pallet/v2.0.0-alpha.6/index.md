@@ -444,7 +444,7 @@ Genesis configurations are controlled in `node/src/chain_spec.rs`. We need to mo
 **`node/src/chain_spec.rs`**
 
 ```rust
-use node_template_runtime::{ContractsConfig, ContractsSchedule, MILLICENTS,};
+use node_template_runtime::{ContractsConfig, ContractsSchedule, MILLICENTS};
 ```
 
 Then inside the `testnet_genesis` function we need to add the contract configuration to the returned `GenesisConfig` object as followed:
