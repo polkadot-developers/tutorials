@@ -4,6 +4,7 @@
 		"create-your-first-substrate-chain",
 		"build-a-dapp",
 		"start-a-private-network",
+		"perform-a-runtime-upgrade",
 		"add-a-pallet",
 		"pallet-in-own-crate"
 	]
