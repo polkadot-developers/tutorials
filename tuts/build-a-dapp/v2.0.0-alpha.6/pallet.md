@@ -73,7 +73,7 @@ At a high level, a Substrate pallet can be broken down into six sections:
 ```rust
 // 1. Imports
 use frame_support::{decl_module, decl_storage, decl_event, dispatch::DispatchResult};
-use system::ensure_signed;
+use frame_system::{self as system, ensure_signed};
 
 // 2. Pallet Configuration
 pub trait Trait: system::Trait { /* --snip-- */ }
@@ -127,8 +127,7 @@ default = ['std']
 std = [
     'codec/std',
     'frame-support/std',
-    'safe-mix/std',
-    'system/std',
+    'frame-system/std',
     'sp-std/std',          <-- This line is new
 ]
 ```
