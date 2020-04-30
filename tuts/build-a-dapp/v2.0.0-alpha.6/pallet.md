@@ -246,7 +246,7 @@ decl_module! {
             let current_block = <system::Module<T>>::block_number();
 
             // Store the proof with the sender and the current block number
-            Proofs::<T>::insert(&proof, (sender.clone(), current_block));
+            Proofs::<T>::insert(&proof, (&sender, current_block));
 
             // Emit an event that the claim was created
             Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
