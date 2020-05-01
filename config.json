@@ -5,6 +5,7 @@
 		"build-a-dapp",
 		"start-a-private-network",
 		"add-a-pallet",
-		"pallet-in-own-crate"
+		"pallet-in-own-crate",
+		"clone-a-live-chain"
 	]
 }
