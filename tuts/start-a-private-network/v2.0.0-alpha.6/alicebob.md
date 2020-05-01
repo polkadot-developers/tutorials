@@ -15,8 +15,8 @@ pre-defined (and definitely not private!) keys known as Alice and Bob.
 
 Alice (or whomever is playing her) should run these commands from node-template repository root.
 
-> Here we've explicitly shown the `purge-chain` command. In the future we will omit this
-> You should purge old chain data any time you're trying to start a new network.
+> Here we've explicitly shown the `purge-chain` command. In the future we will omit this You should
+> purge old chain data any time you're trying to start a new network.
 
 ```bash
 # Purge any chain data from previous runs
@@ -37,16 +37,16 @@ Alice (or whomever is playing her) should run these commands from node-template 
 
 Let's look at those flags in detail:
 
-| <div style="min-width:110pt"> Flags </div> | Descriptions |
-| --- | --- |
-| `--base-path` | Specifies a directory where Substrate should store all the data related to this chain. If the directory does not exist it will be created for you. If other blockchain data already exists there you will get an error. Either clear the directory or choose a different one. If this value is not specified, a default path will be used. |
-| `--chain local` | Specifies which chain specification to use. There are a few pre-packaged options including `local`, `development`, and `staging` but generally one specifies their own chainspec file. We'll specify our own file in a later step. |
-| `--alice` | Puts the pre-defined Alice keys (both for block production and finalization) in the node's keystore. Generally one should generate their own keys and insert them with an RPC call. We'll generate our own keys in a later step. This flag also makes Alice a validator. |
-| `--port 30333` | Specifies the port that your node will listen for p2p traffic on. `30333` is the default and this flag can be omitted if you're happy with the default. If Bob's node will run on the same physical system, you will need to explicitly specify a different port for it. |
-| `--ws-port 9944` | Specifies the port that your node will listen for incoming web socket traffic on. `9944` is the default, so it can also be omitted. |
-| `--rpc-port 9933` | Specifies the port that your node will listen for incoming RPC traffic on. `9933` is the default, so it can also be omitted. |
-| `--telemetry-url` | Tells the node to send telemetry data to a particular server. The one we've chosen here is hosted by Parity and is available for anyone to use. You may also host your own (beyond the scope of this article) or omit this flag entirely. |
-| `--validator` | Means that we want to participate in block production and finalization rather than just sync the network. |
+| <div style="min-width:110pt"> Flags </div> | Descriptions                                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--base-path`                              | Specifies a directory where Substrate should store all the data related to this chain. If the directory does not exist it will be created for you. If other blockchain data already exists there you will get an error. Either clear the directory or choose a different one. If this value is not specified, a default path will be used. |
+| `--chain local`                            | Specifies which chain specification to use. There are a few pre-packaged options including `local`, `development`, and `staging` but generally one specifies their own chainspec file. We'll specify our own file in a later step.                                                                                                         |
+| `--alice`                                  | Puts the pre-defined Alice keys (both for block production and finalization) in the node's keystore. Generally one should generate their own keys and insert them with an RPC call. We'll generate our own keys in a later step. This flag also makes Alice a validator.                                                                   |
+| `--port 30333`                             | Specifies the port that your node will listen for p2p traffic on. `30333` is the default and this flag can be omitted if you're happy with the default. If Bob's node will run on the same physical system, you will need to explicitly specify a different port for it.                                                                   |
+| `--ws-port 9944`                           | Specifies the port that your node will listen for incoming web socket traffic on. `9944` is the default, so it can also be omitted.                                                                                                                                                                                                        |
+| `--rpc-port 9933`                          | Specifies the port that your node will listen for incoming RPC traffic on. `9933` is the default, so it can also be omitted.                                                                                                                                                                                                               |
+| `--telemetry-url`                          | Tells the node to send telemetry data to a particular server. The one we've chosen here is hosted by Parity and is available for anyone to use. You may also host your own (beyond the scope of this article) or omit this flag entirely.                                                                                                  |
+| `--validator`                              | Means that we want to participate in block production and finalization rather than just sync the network.                                                                                                                                                                                                                                  |
 
 When the node starts you should see output similar to this.
 
@@ -75,41 +75,47 @@ When the node starts you should see output similar to this.
 
 > **Notes**
 >
-> * `🔨 Initializing Genesis block/state (state: 0x5ed3…5500, header-hash: 0x4377…90f6)` tells which
-> genesis block the node is using. Bob's node must have the same hashes or they will not connect
-> to one another.
-> * `🏷  Local node identity is: QmSPiPNhFyDUEugSPM9dN2TbD9qzsA1xbiHkCeLsrPZ47m` shows the Peer ID that
-> Bob will need when booting from Alice's node.
+> - `🔨 Initializing Genesis block/state (state: 0x5ed3…5500, header-hash: 0x4377…90f6)` tells which
+>   genesis block the node is using. Bob's node must have the same hashes or they will not connect
+>   to one another.
+> - `🏷 Local node identity is: QmSPiPNhFyDUEugSPM9dN2TbD9qzsA1xbiHkCeLsrPZ47m` shows the Peer ID
+>   that Bob will need when booting from Alice's node.
 
 You'll notice that no blocks are being produced yet. Blocks will start being produced once another
 node joins the network.
 
-More details about all of these flags and others that I haven't mentioned are available by running `./target/release/node-template --help`.
+More details about all of these flags and others that I haven't mentioned are available by running
+`./target/release/node-template --help`.
 
 ## Attach a UI
 
 You can tell a lot about your node by watching the output it produces in your terminal. There is
 also a nice graphical user interface known as the Polkadot-JS Apps, or just "Apps" for short.
 
-In your web browser, navigate to [https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
+In your web browser, navigate to
+[https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
 
-> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy work around is to try another browser, like Chromium. Another option is to [host this interface locally](https://github.com/polkadot-js/apps#development).
+> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
+> work around is to try another browser, like Chromium. Another option is to
+> [host this interface locally](https://github.com/polkadot-js/apps#development).
 
-The link provided above includes the `rpc` URL parameter, which instructs the Apps UI to connect to the URL that was provided as its value (in this case, your local node). To manually configure Apps UI to connect to another node:
+The link provided above includes the `rpc` URL parameter, which instructs the Apps UI to connect to
+the URL that was provided as its value (in this case, your local node). To manually configure Apps
+UI to connect to another node:
 
-  - Click on the top left network icon
+- Click on the top left network icon
 
-    ![Top Left Network Icon](../assets/private-network-top-left-network-icon.png)
+  ![Top Left Network Icon](../assets/private-network-top-left-network-icon.png)
 
-  - A popup dropdown appears. Choose the last entry, which is a local node using default port 9944
+- A popup dropdown appears. Choose the last entry, which is a local node using default port 9944
 
-    ![Select Network](../assets/private-network-select-network.png)
+  ![Select Network](../assets/private-network-select-network.png)
 
-  - To connect to a custom node and port, you just need to specify the endpoint by choosing `custom
-    endpoint` and type in your own endpoint. In this way you can use a single instance of Apps UI to
-    connect to various nodes.
+- To connect to a custom node and port, you just need to specify the endpoint by choosing
+  `custom endpoint` and type in your own endpoint. In this way you can use a single instance of Apps
+  UI to connect to various nodes.
 
-    ![Custom Endpoint](../assets/private-network-custom-endpoint.png)
+  ![Custom Endpoint](../assets/private-network-custom-endpoint.png)
 
 You should now see something like this.
 
@@ -118,9 +124,9 @@ You should now see something like this.
 > **Notes**
 >
 > If you do not want to run your hosted version of Polkadot-JS Apps UI while connecting to Substrate
-> node you have deployed remotely, you can configure ssh local port forwarding to forward local request
-> to the `ws-port` listened by the remote host. This is beyond the scope of this tutorial but is
-> referenced at the bottom.
+> node you have deployed remotely, you can configure ssh local port forwarding to forward local
+> request to the `ws-port` listened by the remote host. This is beyond the scope of this tutorial
+> but is referenced at the bottom.
 
 ## Bob Joins
 
@@ -142,16 +148,17 @@ His command will look very similar.
 
 Most of these options are already explained above, but there are a few points worth mentioning.
 
-* Because these two nodes are running on the same physical machine, Bob must specify a different `--base-path`,
-`--port`, `--ws-port`, and `--rpc-port`.
-* Bob has added the `--bootnodes` flag and specified a single boot node, namely Alice's. He must correctly specify these three pieces of information which Alice can supply for him.
-  * Alice's IP Address, probably `127.0.0.1`
-  * Alice's Port, probably `30333`
-  * Alice's Peer ID, copied from her log output. (`QmSPiPNhFyDUEugSPM9dN2TbD9qzsA1xbiHkCeLsrPZ47m`
-  in the example output above.)
+- Because these two nodes are running on the same physical machine, Bob must specify a different
+  `--base-path`, `--port`, `--ws-port`, and `--rpc-port`.
+- Bob has added the `--bootnodes` flag and specified a single boot node, namely Alice's. He must
+  correctly specify these three pieces of information which Alice can supply for him.
+  - Alice's IP Address, probably `127.0.0.1`
+  - Alice's Port, probably `30333`
+  - Alice's Peer ID, copied from her log output. (`QmSPiPNhFyDUEugSPM9dN2TbD9qzsA1xbiHkCeLsrPZ47m`
+    in the example output above.)
 
-If all is going well, after a few seconds, the nodes should peer together and start producing blocks.
-You should see some lines like the following in the console that started Alice node.
+If all is going well, after a few seconds, the nodes should peer together and start producing
+blocks. You should see some lines like the following in the console that started Alice node.
 
 ```
 ...
@@ -180,9 +187,9 @@ These lines shows that Bob has peered with Alice (**`1 peers`**), they have prod
 
 Looking at the console that started Bob's node, you should see something similar.
 
-Once you've verified that both nodes are running as expected, you can shut them down. The next section of this tutorial
-will include commands to restart the nodes when necessary.
+Once you've verified that both nodes are running as expected, you can shut them down. The next
+section of this tutorial will include commands to restart the nodes when necessary.
 
 ## References
 
-* [Configure ssh local port forwarding](https://www.booleanworld.com/guide-ssh-port-forwarding-tunnelling/)
+- [Configure ssh local port forwarding](https://www.booleanworld.com/guide-ssh-port-forwarding-tunnelling/)
