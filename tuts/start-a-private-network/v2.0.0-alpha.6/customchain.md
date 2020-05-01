@@ -4,14 +4,16 @@ lang: en
 title: Launch Your Private Network
 ---
 
-With you custom chain spec created and distributed to all participants, you're ready to launch your own custom chain. In this section it is no longer required to use a single physical machine or a single binary.
+With you custom chain spec created and distributed to all participants, you're ready to launch your
+own custom chain. In this section it is no longer required to use a single physical machine or a
+single binary.
 
 ## First Participant Starts a Bootnode
 
-You've completed all the necessary prep work and you're now ready to launch your chain. This
-process is very similar to when you launched a chain earlier as Alice and Bob. It's important to
-start with a clean base path, so if you plan to use the same path that you've used previously,
-please delete all contents from that directory.
+You've completed all the necessary prep work and you're now ready to launch your chain. This process
+is very similar to when you launched a chain earlier as Alice and Bob. It's important to start with
+a clean base path, so if you plan to use the same path that you've used previously, please delete
+all contents from that directory.
 
 The first participant can launch her node with
 
@@ -26,12 +28,14 @@ The first participant can launch her node with
   --validator \
   --name MyNode01
 ```
+
 Here are some differences from when we launched as Alice.
 
-* I've omitted the `--alice` flag. Instead we will insert our own custom keys into the keystore
-through the RPC shortly.
-* The `--chain` flag has changed to use our custom chain spec.
-* I've added the optional `--name` flag. You may use it to give your node a human-readable name in the telemetry UI.
+- I've omitted the `--alice` flag. Instead we will insert our own custom keys into the keystore
+  through the RPC shortly.
+- The `--chain` flag has changed to use our custom chain spec.
+- I've added the optional `--name` flag. You may use it to give your node a human-readable name in
+  the telemetry UI.
 
 You should see the console outputs something as follows:
 
@@ -59,11 +63,13 @@ You should see the console outputs something as follows:
 ## Add Keys to Keystore
 
 Once your node is running, you will again notice that no blocks are being produced. At this point,
-you need to add your keys into the keystore. Remember you will need to complete these steps for each node in your network.
+you need to add your keys into the keystore. Remember you will need to complete these steps for each
+node in your network.
 
 ### Option 1: Using Polkadot-JS App UI
 
-You can use the Apps UI to insert your keys into the keystore. Navigate to the "Toolbox" tab and the "RPC Call" sub-tab. Choose "author" and "insertKey". The fields can be filled like this:
+You can use the Apps UI to insert your keys into the keystore. Navigate to the "Toolbox" tab and the
+"RPC Call" sub-tab. Choose "author" and "insertKey". The fields can be filled like this:
 
 ![Inserting a Aura key using Apps](../assets/private-network-apps-insert-key-aura.png)
 
@@ -72,9 +78,12 @@ keytype: aura
 suri: <your mnemonic phrase> (eg. clip organ olive upper oak void inject side suit toilet stick narrow)
 publicKey: <your raw sr25519 key> (eg. 0x9effc1668ca381c242885516ec9fa2b19c67b6684c02a8a3237b6862e5c8cd7e)
 ```
-> If you generated your keys with the Apps UI you will not know your raw public key. In this case you may use your SS58 address (`5FfBQ3kwXrbdyoqLPvcXRp7ikWydXawpNs2Ceu3WwFdhZ8W4`) instead.
 
-You've now successfully inserted your **aura** key. You can repeat those steps to insert your **grandpa** key (the **ed25519** key)
+> If you generated your keys with the Apps UI you will not know your raw public key. In this case
+> you may use your SS58 address (`5FfBQ3kwXrbdyoqLPvcXRp7ikWydXawpNs2Ceu3WwFdhZ8W4`) instead.
+
+You've now successfully inserted your **aura** key. You can repeat those steps to insert your
+**grandpa** key (the **ed25519** key)
 
 ![Inserting a Grandpa key using Apps](../assets/private-network-apps-insert-key.png)
 
@@ -83,9 +92,12 @@ keytype: gran
 suri: <your mnemonic phrase> (eg. clip organ olive upper oak void inject side suit toilet stick narrow)
 publicKey: <your raw ed25519 key> (eg. 0xb48004c6e1625282313b07d1c9950935e86894a2e4f21fb1ffee9854d180c781)
 ```
-> If you generated your keys with the Apps UI you will not know your raw public key. In this case you may use your SS58 address (`5G9NWJ5P9uk7am24yCKeLZJqXWW6hjuMyRJDmw4ofqxG8Js2`) instead.
 
-> If you are following these steps for the _second_ node in the network, you must connect the UI to the second node before inserting the keys.
+> If you generated your keys with the Apps UI you will not know your raw public key. In this case
+> you may use your SS58 address (`5G9NWJ5P9uk7am24yCKeLZJqXWW6hjuMyRJDmw4ofqxG8Js2`) instead.
+
+> If you are following these steps for the _second_ node in the network, you must connect the UI to
+> the second node before inserting the keys.
 
 ### Option 2: Using CLI
 
@@ -114,8 +126,8 @@ If you enter the command and parameters correctly, the node will return a JSON r
 
 ## Subsequent Participants Join
 
-Subsequent validators can now join the network. This can be done by specifying the
-`--bootnodes` paramter as Bob did previously.
+Subsequent validators can now join the network. This can be done by specifying the `--bootnodes`
+paramter as Bob did previously.
 
 ```bash
 ./target/release/node-template \
@@ -133,12 +145,14 @@ Subsequent validators can now join the network. This can be done by specifying t
 As before, we specify another `base-path`, give it another `name`, and also specify this node as a
 `validator`.
 
-Once the node is up, you're ready to add keys to its keystore by following the process (in the previous section) just like you did for the first node.
+Once the node is up, you're ready to add keys to its keystore by following the process (in the
+previous section) just like you did for the first node.
 
-> If you're inserting keys with the UI, you must connect the UI to the second node's WebSocket endpoint before inserting the second node's keys.
+> If you're inserting keys with the UI, you must connect the UI to the second node's WebSocket
+> endpoint before inserting the second node's keys.
 
-> Reminder: All validators must be using identical chain specifications in order to peer. You
-> should see the same genesis block and state root hashes.
+> Reminder: All validators must be using identical chain specifications in order to peer. You should
+> see the same genesis block and state root hashes.
 
 Once both nodes have their keys, you should see them authoring
 
@@ -156,18 +170,19 @@ Once both nodes have their keys, you should see them authoring
 ...
 ```
 
-This line shows that your node has peered with another (**`1 peers`**), and they have produced a block
-(**`best: #1 (0x5987…be47)`**).
+This line shows that your node has peered with another (**`1 peers`**), and they have produced a
+block (**`best: #1 (0x5987…be47)`**).
 
-You may notice that no block finalization has happened yet (**`finalized #0 (0xf437…e7fe)`**). Substrate nodes require a restart after inserting a grandpa key. Kill your nodes and restart them with the same commands you used previously. Now blocks should be finalized.
+You may notice that no block finalization has happened yet (**`finalized #0 (0xf437…e7fe)`**).
+Substrate nodes require a restart after inserting a grandpa key. Kill your nodes and restart them
+with the same commands you used previously. Now blocks should be finalized.
 
 ## You're Finished
 
 Congratulations! You've started your own blockchain!
 
-In this tutorial you've learned to generate your own keypairs, create a
-custom chain spec that uses those keypairs, and start a private network based on your custom chain
-spec.
+In this tutorial you've learned to generate your own keypairs, create a custom chain spec that uses
+those keypairs, and start a private network based on your custom chain spec.
 
 <!-- TODO link to the followup tutorial about starting a 3 node network using the demo substrate node
 Details in https://github.com/substrate-developer-hub/tutorials/issues/16-->

@@ -11,9 +11,9 @@ pre-built pallets for use in FRAME-based runtimes.
 ![Runtime Composition](../assets/runtime.png)
 
 For example, FRAME includes a
-[Balances](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_balances/index.html) pallet that controls
-the underlying currency of your blockchain by managing the _balance_ of all the accounts in your
-system.
+[Balances](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_balances/index.html) pallet that
+controls the underlying currency of your blockchain by managing the _balance_ of all the accounts in
+your system.
 
 If you want to add smart contract functionality to your blockchain, you simply need to include the
 [Contracts](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_contracts/index.html) pallet.
@@ -23,9 +23,9 @@ Even things like on-chain governance can be added to your blockchain by includin
 [Elections](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_elections/index.html), and
 [Collective](https://substrate.dev/rustdocs/v2.0.0-alpha.5/pallet_collective/index.html).
 
-The goal of this tutorial is to teach you how to create your own Substrate pallet to include
-in your custom blockchain! The `substrate-node-template` comes with a template pallet that
-we will build your custom logic on top of.
+The goal of this tutorial is to teach you how to create your own Substrate pallet to include in your
+custom blockchain! The `substrate-node-template` comes with a template pallet that we will build
+your custom logic on top of.
 
 ## File Structure
 
@@ -91,14 +91,14 @@ decl_storage! { /* --snip-- */ }
 decl_module! { /* --snip-- */ }
 ```
 
-Things like events, storage, and callable functions may look familiar to you if you have done
-other blockchain development. We will show you what each of these components look like for a basic
-Proof Of Existence pallet.
+Things like events, storage, and callable functions may look familiar to you if you have done other
+blockchain development. We will show you what each of these components look like for a basic Proof
+Of Existence pallet.
 
 ### Imports and Dependencies
 
-Since imports are pretty boring, you can start by copying this at the top of your empty
-`lib.rs` file:
+Since imports are pretty boring, you can start by copying this at the top of your empty `lib.rs`
+file:
 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -110,7 +110,8 @@ use system::ensure_signed;
 use sp_std::vec::Vec;
 ```
 
-Most of these imports are already available because they were used in the template pallet whose code we just deleted. However, `sp_std` is not available and we need to list it as a dependency.
+Most of these imports are already available because they were used in the template pallet whose code
+we just deleted. However, `sp_std` is not available and we need to list it as a dependency.
 
 **Add** this block to your `pallets/template/Cargo.toml` file.
 
@@ -121,6 +122,7 @@ version = '2.0.0-alpha.5'
 ```
 
 Then, **Update** the existing `[features]` block to look like this. The last line is new.
+
 ```toml
 [features]
 default = ['std']
@@ -163,15 +165,18 @@ decl_event! {
 ```
 
 Our pallet will only have two events:
+
 1. When a new proof is added to the blockchain.
 2. When a proof is removed.
 
-The events can contain some additional data, in this case, each event will also display who triggered the
-event (`AccountId`), and the proof data (as `Vec<u8>`) that is being stored or removed.
+The events can contain some additional data, in this case, each event will also display who
+triggered the event (`AccountId`), and the proof data (as `Vec<u8>`) that is being stored or
+removed.
 
 ## Pallet Errors
 
-The events we defined previously indicate when calls to the pallet have completed successfully. Similarly, errors indicate when a call has failed, and why it has failed.
+The events we defined previously indicate when calls to the pallet have completed successfully.
+Similarly, errors indicate when a call has failed, and why it has failed.
 
 ```rust
 // This pallet's errors.
@@ -187,7 +192,9 @@ decl_error! {
 }
 ```
 
-The first of these errors can occur when attempting to claim a new proof. Of course a user cannot claim a proof that has already been claimed. The latter two can occur when attempting to revoke a proof.
+The first of these errors can occur when attempting to claim a new proof. Of course a user cannot
+claim a proof that has already been claimed. The latter two can occur when attempting to revoke a
+proof.
 
 ### Pallet Storage Items
 

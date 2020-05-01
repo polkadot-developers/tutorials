@@ -47,13 +47,17 @@ If the number after `best:` is increasing, your blockchain is producing new bloc
 ## Start the Front End
 
 To interact with the local node we will use the Polkadot-js Apps user interface, often known as
-"Apps" for short. Despite the name, Apps will work with any Substrate-based blockchain including ours, not just Polkadot.
+"Apps" for short. Despite the name, Apps will work with any Substrate-based blockchain including
+ours, not just Polkadot.
 
-In your web browser, navigate to [https://polkadot.js.org/apps](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
+In your web browser, navigate to
+[https://polkadot.js.org/apps](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
 
 On the `Settings` tab ensure that you are connected to a `Local Node` or `ws://127.0.0.1:9944`.
 
-> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy work around is to try another browser, like Chromium. Another option is to [host this interface locally](https://github.com/polkadot-js/apps#development).
+> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
+> work around is to try another browser, like Chromium. Another option is to
+> [host this interface locally](https://github.com/polkadot-js/apps#development).
 
 ## Interact
 
@@ -80,13 +84,15 @@ except you.
 
 This is the end of your journey to launching your first blockchain with Substrate.
 
-You have launched a working Substrate-based blockchain, attached a user interface to that chain, and made token transfers among users. We hope you'll continue learning about Substrate.
+You have launched a working Substrate-based blockchain, attached a user interface to that chain, and
+made token transfers among users. We hope you'll continue learning about Substrate.
 
 Your next step may be:
 
-* Decentralize your network with more nodes in the [Start a Private Network](tutorials/start-a-private-network/index.md) tutorial.
-* Add custom functionality in the [Build a dApp](tutorials/build-a-dapp/index.md) tutorial.
+- Decentralize your network with more nodes in the
+  [Start a Private Network](tutorials/start-a-private-network/index.md) tutorial.
+- Add custom functionality in the [Build a dApp](tutorials/build-a-dapp/index.md) tutorial.
 
-If you experienced any issues with this tutorial or want to provide feedback, feel free to [open a
-GitHub
-issue](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/issues/new) or reach out on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
+If you experienced any issues with this tutorial or want to provide feedback, feel free to
+[open a GitHub issue](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/issues/new)
+or reach out on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
