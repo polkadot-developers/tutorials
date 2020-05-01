@@ -1,10 +1,10 @@
 {
-	"current_version": "v2.0.0-alpha.6",
-	"display_order": [
-		"create-your-first-substrate-chain",
-		"build-a-dapp",
-		"start-a-private-network",
-		"add-a-pallet",
-		"pallet-in-own-crate"
-	]
+  "current_version": "v2.0.0-alpha.6",
+  "display_order": [
+    "create-your-first-substrate-chain",
+    "build-a-dapp",
+    "start-a-private-network",
+    "add-a-pallet",
+    "pallet-in-own-crate"
+  ]
 }

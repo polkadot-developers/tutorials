@@ -20,10 +20,11 @@ Begin by compiling and installing the utility. This may take up to 15 minutes or
 cargo install --force subkey --git https://github.com/paritytech/substrate --tag v2.0.0-alpha.5
 ```
 
-We will need to generate at least **2** keys from each type. Every node will need to have its own keys.
+We will need to generate at least **2** keys from each type. Every node will need to have its own
+keys.
 
-Generate a mnemonic and see the `sr25519` key and address associated with it. This key will be
-used by Aura for block production.
+Generate a mnemonic and see the `sr25519` key and address associated with it. This key will be used
+by Aura for block production.
 
 ```bash
 $ subkey --sr25519 generate
@@ -50,9 +51,9 @@ The same UI that we used to see blocks being produced can also be used to genera
 is convenient if you do not want to install subkey. It can be used for production keys, but the
 system should not be connected to the internet when generating such keys.
 
-> A system that generates production keys should not be connected to the internet regardless of
-> what method you choose. It is mentioned here specifically because having an internet connection
-> is generally desired when using a webapp like Polkadot JS Apps.
+> A system that generates production keys should not be connected to the internet regardless of what
+> method you choose. It is mentioned here specifically because having an internet connection is
+> generally desired when using a webapp like Polkadot JS Apps.
 
 On the "Accounts" tab, click "Add account". You do not need to provide a name, although you may if
 you would like to save this account for submitting transaction in addition to validating.
@@ -61,8 +62,8 @@ Generate an `sr25519` key which will be used by Aura for block production. Take 
 menmonic phrase, and the SS58 address which can be copied by clicking on the identicon in the top
 left.
 
-Then generate an `ed25519` key which will be used by GRANDPA for for block finalization. Again,
-note the menmonic phrase and ss58 address.
+Then generate an `ed25519` key which will be used by GRANDPA for for block finalization. Again, note
+the menmonic phrase and ss58 address.
 
 ## Option 3: Use Pre-Generated Keys
 
@@ -72,39 +73,39 @@ learning purposes.
 
 ### Pair 1
 
-| Key | Value |
-| --- | --- |
+| Key           | Value                                                                  |
+| ------------- | ---------------------------------------------------------------------- |
 | Secret phrase | `clip organ olive upper oak void inject side suit toilet stick narrow` |
-| Secret seed | `0x4bd2b2c1dad3dbe3fa37dc6ad5a4e32ddd8ad84b938179ac905b0622880e86e7` |
-| **SR25519** |  |
-| Public key | `0x9effc1668ca381c242885516ec9fa2b19c67b6684c02a8a3237b6862e5c8cd7e` |
-| SS58 Address | `5FfBQ3kwXrbdyoqLPvcXRp7ikWydXawpNs2Ceu3WwFdhZ8W4` |
-| **ED25519** | |
-| Public key | `0xb48004c6e1625282313b07d1c9950935e86894a2e4f21fb1ffee9854d180c781` |
-| SS58 Address | `5G9NWJ5P9uk7am24yCKeLZJqXWW6hjuMyRJDmw4ofqxG8Js2` |
+| Secret seed   | `0x4bd2b2c1dad3dbe3fa37dc6ad5a4e32ddd8ad84b938179ac905b0622880e86e7`   |
+| **SR25519**   |                                                                        |
+| Public key    | `0x9effc1668ca381c242885516ec9fa2b19c67b6684c02a8a3237b6862e5c8cd7e`   |
+| SS58 Address  | `5FfBQ3kwXrbdyoqLPvcXRp7ikWydXawpNs2Ceu3WwFdhZ8W4`                     |
+| **ED25519**   |                                                                        |
+| Public key    | `0xb48004c6e1625282313b07d1c9950935e86894a2e4f21fb1ffee9854d180c781`   |
+| SS58 Address  | `5G9NWJ5P9uk7am24yCKeLZJqXWW6hjuMyRJDmw4ofqxG8Js2`                     |
 
 ### Pair 2
 
-| Key | Value |
-| --- | --- |
-| Secret phrase |`paper next author index wedding frost voice mention fetch waste march tilt`|
-| Secret seed | `0x4846fedafeed0cf307da3e2b5dfa61415009b239119242006fc8c0972dde64b0` |
-| **SR25519** |  |
-| Public key | `0x74cca68a32156615a5923c67024db70da5e7ed36e70c8cd5bcf3556df152bb6d` |
-| SS58 Address | `5EhrCtDaQRYjVbLi7BafbGpFqcMhjZJdu8eW8gy6VRXh6HDp` |
-| **ED25519** | |
-| Public key | `0x0fe9065f6450c5501df3efa6b13958949cb4b81a2147d68c14ad25366be1ccb4` |
-| SS58 Address | `5CRZoFgJs4zLzCCAGoCUUs2MRmuD5BKAh17pWtb62LMoCi9h` |
+| Key           | Value                                                                        |
+| ------------- | ---------------------------------------------------------------------------- |
+| Secret phrase | `paper next author index wedding frost voice mention fetch waste march tilt` |
+| Secret seed   | `0x4846fedafeed0cf307da3e2b5dfa61415009b239119242006fc8c0972dde64b0`         |
+| **SR25519**   |                                                                              |
+| Public key    | `0x74cca68a32156615a5923c67024db70da5e7ed36e70c8cd5bcf3556df152bb6d`         |
+| SS58 Address  | `5EhrCtDaQRYjVbLi7BafbGpFqcMhjZJdu8eW8gy6VRXh6HDp`                           |
+| **ED25519**   |                                                                              |
+| Public key    | `0x0fe9065f6450c5501df3efa6b13958949cb4b81a2147d68c14ad25366be1ccb4`         |
+| SS58 Address  | `5CRZoFgJs4zLzCCAGoCUUs2MRmuD5BKAh17pWtb62LMoCi9h`                           |
 
 ### Pair 3
 
-| Key | Value |
-| --- | --- |
-| Secret phrase |`ridge easy shift marine leave vendor clever mammal clown input race hollow`|
-| Secret seed | `0xfe97888532db5ecfbf87206184a232c7fc336d7aadb776419b24e3c0ff70c31a` |
-| **SR25519** |  |
-| Public key | `0x103aebd7ab1e971be446b1a13eb40541ec8ec162deb71b6ae594b3ce02ee5137` |
-| SS58 Address | `5CRz8J64ksqQ1DHuCUhyc5x1C2tC7exbQpkFVqEmfaG9RKdc` |
-| **ED25519** | |
-| Public key | `0x4822d2a0b3c5665050cd3470717439ca23a3c3387b65efcf6a9fbcc93571ea4a` |
-| SS58 Address | `5DhHecmfy3hB9TpWJvCRXi1EwU3A4AwYvmCYJemsUUAcxf4V` |
+| Key           | Value                                                                        |
+| ------------- | ---------------------------------------------------------------------------- |
+| Secret phrase | `ridge easy shift marine leave vendor clever mammal clown input race hollow` |
+| Secret seed   | `0xfe97888532db5ecfbf87206184a232c7fc336d7aadb776419b24e3c0ff70c31a`         |
+| **SR25519**   |                                                                              |
+| Public key    | `0x103aebd7ab1e971be446b1a13eb40541ec8ec162deb71b6ae594b3ce02ee5137`         |
+| SS58 Address  | `5CRz8J64ksqQ1DHuCUhyc5x1C2tC7exbQpkFVqEmfaG9RKdc`                           |
+| **ED25519**   |                                                                              |
+| Public key    | `0x4822d2a0b3c5665050cd3470717439ca23a3c3387b65efcf6a9fbcc93571ea4a`         |
+| SS58 Address  | `5DhHecmfy3hB9TpWJvCRXi1EwU3A4AwYvmCYJemsUUAcxf4V`                           |

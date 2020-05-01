@@ -56,13 +56,17 @@ If the number after `best:` is increasing, your blockchain is producing new bloc
 ## Start the Front End
 
 To interact with the local node we will use the Polkadot-js Apps user interface, often known as
-"Apps" for short. Despite the name, Apps will work with any Substrate-based blockchain including ours, not just Polkadot.
+"Apps" for short. Despite the name, Apps will work with any Substrate-based blockchain including
+ours, not just Polkadot.
 
-In your web browser, navigate to [https://polkadot.js.org/apps](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
+In your web browser, navigate to
+[https://polkadot.js.org/apps](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
 
 On the `Settings` tab ensure that you are connected to a `Local Node` or `ws://127.0.0.1:9944`.
 
-> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy work around is to try another browser, like Chromium. Another option is to [host this interface locally](https://github.com/polkadot-js/apps#development).
+> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
+> work around is to try another browser, like Chromium. Another option is to
+> [host this interface locally](https://github.com/polkadot-js/apps#development).
 
 ## Interact
 
@@ -81,21 +85,23 @@ Success", and of course Charlie's balance will increase.
 ## Create Your Own Account
 
 You can create your own account by selecting the `+ Add Account` button. It won't have any tokens
-yet, but you can send some from Alice or any other pre-funded account. Only you (and your
-browser) will know the private key for your own account which means nobody can transfer those tokens
-except you.
+yet, but you can send some from Alice or any other pre-funded account. Only you (and your browser)
+will know the private key for your own account which means nobody can transfer those tokens except
+you.
 
 ## Next Steps
 
 This is the end of your journey to launching your first blockchain with Substrate.
 
-You have launched a working Substrate-based blockchain, attached a user interface to that chain, and made token transfers among users. We hope you'll continue learning about Substrate.
+You have launched a working Substrate-based blockchain, attached a user interface to that chain, and
+made token transfers among users. We hope you'll continue learning about Substrate.
 
 Your next step may be:
 
-* Decentralize your network with more nodes in the [Start a Private Network](/tutorials/start-a-private-network/v2.0.0-alpha.6) tutorial.
-* Add custom functionality in the [Build a dApp](/tutorials/build-a-dapp/v2.0.0-alpha.6) tutorial.
+- Decentralize your network with more nodes in the
+  [Start a Private Network](/tutorials/start-a-private-network/v2.0.0-alpha.6) tutorial.
+- Add custom functionality in the [Build a dApp](/tutorials/build-a-dapp/v2.0.0-alpha.6) tutorial.
 
-If you experienced any issues with this tutorial or want to provide feedback, feel free to [open a
-GitHub
-issue](https://github.com/substrate-developer-hub/tutorials/issues/new) or reach out on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
+If you experienced any issues with this tutorial or want to provide feedback, feel free to
+[open a GitHub issue](https://github.com/substrate-developer-hub/tutorials/issues/new) or reach out
+on [Riot](https://riot.im/app/#/room/!HzySYSaIhtyWrwiwEV:matrix.org).
