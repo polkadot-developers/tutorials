@@ -157,7 +157,7 @@ error[E0425]: cannot find function `memory_new` in module `sandbox`
   --> ~/.cargo/registry/src/github.com-1ecc6299db9ec823/sp-sandbox-0.8.0-alpha.6/src/../without_std.rs:72:18
    |
 72 |         match sandbox::memory_new(initial, maximum) {
-   |  
+   |
 
 ...
 ```
@@ -170,14 +170,14 @@ cargo check
 
 ## Adding the Contracts Pallet
 
-Now that we have successfully imported the Contracts pallet crate, we need to add it to our Runtime. Different pallets will require you to `use` different thing. For the contracts pallet we will use the `Gas` type. Add this line along with the other `pub use` statements at the beginning of your runtime.
+Now that we have successfully imported the Contracts pallet crate, we need to add it to our Runtime. Different pallets will require you to `use` different thing. For the contracts pallet we will use the `Schedule` type. Add this line along with the other `pub use` statements at the beginning of your runtime.
 
 **`runtime/src/lib.rs`**
 
 ```rust
 /*** Add This Line ***/
-/// Importing the contracts Gas type
-pub use contracts::Gas;
+/// Importing the contracts Schedule type.
+pub use contracts::Schedule as ContractsSchedule;
 ```
 
 ### Implementing the Contract Trait
@@ -444,7 +444,7 @@ Genesis configurations are controlled in `node/src/chain_spec.rs`. We need to mo
 **`node/src/chain_spec.rs`**
 
 ```rust
-use node_template_runtime::{ContractsConfig, MILLICENTS};
+use node_template_runtime::{ContractsConfig, ContractsSchedule, MILLICENTS};
 ```
 
 Then inside the `testnet_genesis` function we need to add the contract configuration to the returned `GenesisConfig` object as followed:
@@ -457,20 +457,19 @@ fn testnet_genesis(initial_authorities: Vec<(AuraId, GrandpaId)>,
     root_key: AccountId,
     endowed_accounts: Vec<AccountId>,
     _enable_println: bool) -> GenesisConfig {
-    /*** Add This Block ***/
-    let mut contracts_config = ContractsConfig {
-        current_schedule: Default::default(),
-        gas_price: 1 * MILLICENTS,
-    };
-    // IMPORTANT: println should only be enabled on development chains!
-    contracts_config.current_schedule.enable_println = _enable_println;
-    /*** End Added Block ***/
 
     GenesisConfig {
         /* --snip-- */
 
-        /*** Add This Line ***/
-        contracts: Some(contracts_config),
+        /*** Add This Block ***/
+        contracts: Some(ContractsConfig {
+            current_schedule: ContractsSchedule {
+                    enable_println,
+                    ..Default::default()
+            },
+            gas_price: 1 * MILLICENTS,
+        }),
+        /*** End Added Block ***/
     }
 }
 ```
