@@ -48,7 +48,7 @@ substrate-front-end-template
 
 Delete the contents of that file, and instead use the following component.
 
-<div style="max-height: 20em; overflow: auto; margin-bottom: 1em;">
+<div style="max-height: 20em; margin-bottom: 1em;">
 
 ```js
 // React and Semantic UI elements.
