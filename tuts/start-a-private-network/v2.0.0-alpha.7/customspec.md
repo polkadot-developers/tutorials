@@ -24,7 +24,7 @@ the one we used before. To start, we need to export the chain spec to a file nam
 ```bash
 # Export the local chainspec to json
 $ ./target/release/node-template build-spec --disable-default-bootnode --chain local > customSpec.json
-2020-01-10 15:39:04 Building chain spec
+2020-05-07 07:35:16 Building chain spec
 ```
 
 The file we just created contains several fields, and you can learn a lot by exploring them. By far
@@ -47,13 +47,13 @@ by **"grandpa"** field. That section looks like this
       "aura": {
         "authorities": [
           "5FfBQ3kwXrbdyoqLPvcXRp7ikWydXawpNs2Ceu3WwFdhZ8W4",
-          "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty"
+          "5EhrCtDaQRYjVbLi7BafbGpFqcMhjZJdu8eW8gy6VRXh6HDp"
         ]
       },
       "grandpa": {
         "authorities": [
           ["5G9NWJ5P9uk7am24yCKeLZJqXWW6hjuMyRJDmw4ofqxG8Js2", 1],
-          ["5GoNkf6WdbxCFnPdAnYYQyCjAKPJgLNxXwPjwTh6DGg6gN3E", 1]
+          ["5CRZoFgJs4zLzCCAGoCUUs2MRmuD5BKAh17pWtb62LMoCi9h", 1]
         ]
       }
       //-- snip --
