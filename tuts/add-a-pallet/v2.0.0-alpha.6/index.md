@@ -69,9 +69,10 @@ your runtime has. For example, it depends on the
 
 ```TOML
 [dependencies.balances]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
 package = 'pallet-balances'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.6'
 ```
 
 ### Crate Features
@@ -146,14 +147,16 @@ So based on the `balances` import shown above, the `contracts` import will look 
 
 ```TOML
 [dependencies.contracts]
+git = 'https://github.com/paritytech/substrate.git'
 default_features = false
 package = 'pallet-contracts'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.6'
 
 [dependencies.contracts-primitives]
+git = 'https://github.com/paritytech/substrate.git'
 default_features = false
 package = 'pallet-contracts-primitives'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.6'
 ```
 
 As with other pallets, the Contracts pallet has an `std` feature. We should build its `std` feature
@@ -362,9 +365,11 @@ We start by adding the required API dependencies in our `Cargo.toml`.
 
 ```TOML
 [dependencies.contracts-rpc-runtime-api]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
 package = 'pallet-contracts-rpc-runtime-api'
 version = '0.8.0-alpha.6'
+tag = 'v2.0.0-alpha.6'
 ```
 
 **`runtime/Cargo.toml`**
@@ -461,8 +466,15 @@ don't have to maintain a dedicated `std` feature.
 [dependencies]
 #--snip--
 jsonrpc-core = '14.0.5'
-pallet-contracts-rpc = '0.8.0-alpha.6'
-sc-rpc = '2.0.0-alpha.6'
+
+[dependencies.pallet-contracts-rpc]
+git = 'https://github.com/paritytech/substrate.git'
+version = '0.8.0-alpha.6'
+tag = 'v2.0.0-alpha.6'
+
+[dependencies.sc-rpc]
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'v2.0.0-alpha.6'
 ```
 
 **`node/src/service.rs`**
