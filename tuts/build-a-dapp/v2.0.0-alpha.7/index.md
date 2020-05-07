@@ -17,7 +17,7 @@ We only expect that:
 
 - You are generally familiar with software development, writing code, and running your code.
 - You have completed the
-  [Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-aplha.6).
+  [Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-alpha.7).
 - You are open to learning about the bleeding edge of blockchain development.
 
 If you run into an issue on this tutorial, **we are here to help!** You can

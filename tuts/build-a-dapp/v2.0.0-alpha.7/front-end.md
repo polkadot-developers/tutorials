@@ -50,26 +50,26 @@ Delete the contents of that file, and instead use the following component.
 
 ```js
 // React and Semantic UI elements.
-import React, { useState, useEffect } from "react";
-import { Form, Input, Grid, Message } from "semantic-ui-react";
+import React, { useState, useEffect } from 'react';
+import { Form, Input, Grid, Message } from 'semantic-ui-react';
 // Pre-built Substrate front-end utilities for connecting to a node
 // and making a transaction.
-import { useSubstrate } from "./substrate-lib";
-import { TxButton } from "./substrate-lib/components";
+import { useSubstrate } from './substrate-lib';
+import { TxButton } from './substrate-lib/components';
 // Polkadot-JS utilities for hashing data.
-import { blake2AsHex } from "@polkadot/util-crypto";
+import { blake2AsHex } from '@polkadot/util-crypto';
 
 // Our main Proof Of Existence Component which is exported.
-export default function ProofOfExistence(props) {
+export default function ProofOfExistence (props) {
   // Establish an API to talk to our Substrate node.
   const { api } = useSubstrate();
-  // Get the "selected user" from the `AccountSelector` component.
+  // Get the 'selected user' from the `AccountSelector` component.
   const { accountPair } = props;
   // React hooks for all the state variables we track.
   // Learn more at: https://reactjs.org/docs/hooks-intro.html
-  const [status, setStatus] = useState("");
-  const [digest, setDigest] = useState("");
-  const [owner, setOwner] = useState("");
+  const [status, setStatus] = useState('');
+  const [digest, setDigest] = useState('');
+  const [owner, setOwner] = useState('');
   const [block, setBlock] = useState(0);
 
   // Our `FileReader()` which is accessible from our functions below.
@@ -79,8 +79,8 @@ export default function ProofOfExistence(props) {
   const bufferToDigest = () => {
     // Turns the file content to a hexadecimal representation.
     const content = Array.from(new Uint8Array(fileReader.result))
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
+      .map((b) => b.toString(16).padStart(2, '0'))
+      .join('');
 
     const hash = blake2AsHex(content, 256);
     setDigest(hash);
@@ -93,7 +93,7 @@ export default function ProofOfExistence(props) {
     fileReader.readAsArrayBuffer(file);
   };
 
-  // React hook to update the "Owner" and "Block Number" information for a file.
+  // React hook to update the 'Owner' and 'Block Number' information for a file.
   useEffect(() => {
     let unsubscribe;
 
@@ -117,7 +117,7 @@ export default function ProofOfExistence(props) {
   }, [digest, api.query.templateModule]);
 
   // We can say a file digest is claimed if the stored block number is not 0.
-  function isClaimed() {
+  function isClaimed () {
     return block !== 0;
   }
 
@@ -130,17 +130,17 @@ export default function ProofOfExistence(props) {
         <Form.Field>
           {/* File selector with a callback to `handleFileChosen`. */}
           <Input
-            type="file"
-            id="file"
-            label="Your File"
+            type='file'
+            id='file'
+            label='Your File'
             onChange={(e) => handleFileChosen(e.target.files[0])}
           />
           {/* Show this message if the file is available to be claimed */}
-          <Message success header="File Digest Unclaimed" content={digest} />
+          <Message success header='File Digest Unclaimed' content={digest} />
           {/* Show this message if the file is already claimed. */}
           <Message
             warning
-            header="File Digest Claimed"
+            header='File Digest Claimed'
             list={[digest, `Owner: ${owner}`, `Block: ${block}`]}
           />
         </Form.Field>
@@ -150,9 +150,9 @@ export default function ProofOfExistence(props) {
           and not already claimed. Updates the `status`. */}
           <TxButton
             accountPair={accountPair}
-            label={"Create Claim"}
+            label={'Create Claim'}
             setStatus={setStatus}
-            type="TRANSACTION"
+            type='TRANSACTION'
             attrs={{ params: [digest], tx: api.tx.templateModule.createClaim }}
             disabled={isClaimed() || !digest}
           />
@@ -160,15 +160,15 @@ export default function ProofOfExistence(props) {
           and is already claimed. Updates the `status`. */}
           <TxButton
             accountPair={accountPair}
-            label="Revoke Claim"
+            label='Revoke Claim'
             setStatus={setStatus}
-            type="TRANSACTION"
+            type='TRANSACTION'
             attrs={{ params: [digest], tx: api.tx.templateModule.revokeClaim }}
             disabled={!isClaimed() || owner !== accountPair.address}
           />
         </Form.Field>
         {/* Status message about the transaction. */}
-        <div style={{ overflowWrap: "break-word" }}>{status}</div>
+        <div style={{ overflowWrap: 'break-word' }}>{status}</div>
       </Form>
     </Grid.Column>
   );

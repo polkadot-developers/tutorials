@@ -11,16 +11,16 @@ pre-built pallets for use in FRAME-based runtimes.
 ![Runtime Composition](../assets/runtime.png)
 
 For example, FRAME includes a
-[Balances](https://docs.rs/pallet-balances/2.0.0-alpha.6/pallet_balances/) pallet that controls the
+[Balances](https://docs.rs/pallet-balances/2.0.0-alpha.7/pallet_balances/) pallet that controls the
 underlying currency of your blockchain by managing the _balance_ of all the accounts in your system.
 
 If you want to add smart contract functionality to your blockchain, you simply need to include the
-[Contracts](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/) pallet.
+[Contracts](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/) pallet.
 
 Even things like on-chain governance can be added to your blockchain by including pallets like
-[Democracy](https://docs.rs/pallet-democracy/2.0.0-alpha.6/pallet_democracy/),
-[Elections](https://docs.rs/pallet-elections/2.0.0-alpha.6/pallet_elections/), and
-[Collective](https://docs.rs/pallet-collective/2.0.0-alpha.6/pallet_collective/).
+[Democracy](https://docs.rs/pallet-democracy/2.0.0-alpha.7/pallet_democracy/),
+[Elections](https://docs.rs/pallet-elections/2.0.0-alpha.7/pallet_elections/), and
+[Collective](https://docs.rs/pallet-collective/2.0.0-alpha.7/pallet_collective/).
 
 The goal of this tutorial is to teach you how to create your own Substrate pallet to include in your
 custom blockchain! The `substrate-node-template` comes with a template pallet that we will build
@@ -71,20 +71,20 @@ At a high level, a Substrate pallet can be broken down into six sections:
 
 ```rust
 // 1. Imports
-use frame_support::{decl_module, decl_storage, decl_event, dispatch::DispatchResult};
+use frame_support::{decl_module, decl_storage, decl_event, decl_error, dispatch};
 use frame_system::{self as system, ensure_signed};
 
 // 2. Pallet Configuration
 pub trait Trait: system::Trait { /* --snip-- */ }
 
-// 3. Pallet Events
+// 3. Pallet Storage Items
+decl_storage! { /* --snip-- */ }
+
+// 4. Pallet Events
 decl_event! { /* --snip-- */ }
 
-// 4. Pallet Errors
+// 5. Pallet Errors
 decl_error! { /* --snip-- */ }
-
-// 5. Pallet Storage Items
-decl_storage! { /* --snip-- */ }
 
 // 6. Callable Pallet Functions
 decl_module! { /* --snip-- */ }
@@ -116,8 +116,9 @@ we just deleted. However, `sp_std` is not available and we need to list it as a 
 
 ```toml
 [dependencies.sp-std]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 ```
 
 Then, **Update** the existing `[features]` block to look like this. The last line is new.
@@ -238,7 +239,7 @@ decl_module! {
         fn deposit_event() = default;
 
         /// Allow a user to claim ownership of an unclaimed proof
-        #[weight = frame_support::weights::SimpleDispatchInfo::default()]
+        #[weight = 10_000]
         fn create_claim(origin, proof: Vec<u8>) {
             // Verify that the incoming transaction is signed and store who the
             // caller of this function is.
@@ -258,7 +259,7 @@ decl_module! {
         }
 
         /// Allow the owner to revoke their claim
-        #[weight = frame_support::weights::SimpleDispatchInfo::default()]
+        #[weight = 10_000]
         fn revoke_claim(origin, proof: Vec<u8>) {
             // Determine who is calling the function
             let sender = ensure_signed(origin)?;
@@ -283,7 +284,7 @@ decl_module! {
 ```
 
 > The functions you see here do not have return types explicitly stated. In reality they all return
-> [`DispatchResult`](https://docs.rs/frame-support/2.0.0-alpha.6/frame_support/dispatch/type.DispatchResult.html)s.
+> [`DispatchResult`](https://docs.rs/frame-support/2.0.0-alpha.7/frame_support/dispatch/type.DispatchResult.html)s.
 > This return type is added on your behalf by the `decl_module!` macro.
 
 ## Compile Your New Pallet
