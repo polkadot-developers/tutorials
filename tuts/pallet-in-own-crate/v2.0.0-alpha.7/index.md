@@ -9,10 +9,10 @@ node based on the `substrate-node-template`.
 
 ## Install the Node Template
 
-You should already have version `v2.0.0-alpha.6` of the
+You should already have version `v2.0.0-alpha.7` of the
 [Substrate Node Template](https://github.com/substrate-developer-hub/substrate-node-template)
 compiled on your computer from when you completed the
-[Create Your First Substrate Chain Tutorial](tutorials/create-your-first-substrate-chain/v2.0.0-alpha.6).
+[Create Your First Substrate Chain Tutorial](tutorials/create-your-first-substrate-chain/v2.0.0-alpha.7).
 If you do not, please complete that tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template
@@ -28,7 +28,7 @@ Clone the Substrate pallet template in the `pallets` directory of your node temp
 
 ```bash
 cd pallets
-git clone -b v2.0.0-alpha.6 https://github.com/substrate-developer-hub/substrate-pallet-template test-pallet
+git clone -b v2.0.0-alpha.7 https://github.com/substrate-developer-hub/substrate-pallet-template test-pallet
 ```
 
 > In this tutorial we have placed the pallet template _inside_ the node template's directory
@@ -58,7 +58,7 @@ homepage = 'https://substrate.dev'
 license = 'Unlicense'
 name = 'test-pallet'
 repository = 'https://github.com/substrate-developer-hub/substrate-pallet-template'
-version = '2.0.0-alpha.6'
+version = '2.0.0-alpha.7'
 ```
 
 ### Compile the Template Pallet
@@ -115,12 +115,13 @@ consistent dependencies between your pallet and your runtime.
 # --snip--
 
 [dependencies.frame-support]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 ```
 
-From the above snippet, we see that this pallet template depends on version `2.0.0-alpha.6` of the
-low-level libraries. Thus it can be used in runtimes that also depend on `2.0.0-alpha.6`.
+From the above snippet, we see that this pallet template depends on version `2.0.0-alpha.7` of the
+low-level libraries. Thus it can be used in runtimes that also depend on `2.0.0-alpha.7`.
 
 ### Your Pallet's Dev Dependencies
 
@@ -133,8 +134,9 @@ dependencies that are needed in your pallet's tests, but not the actual pallet i
 # --snip--
 
 [dev-dependencies.sp-core]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 ```
 
 You can confirm that the tests in the Substrate pallet template pass with:
