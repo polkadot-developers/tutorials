@@ -27,7 +27,8 @@ of those prerequisites installed for you:
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 ```
 
-You can view the source code for this script by visiting [https://getsubstrate.io](https://getsubstrate.io) in your browser.
+You can view the source code for this script by visiting
+[https://getsubstrate.io](https://getsubstrate.io) in your browser.
 
 > If you did not have Rust installed prior to running this script, make sure to add restart your
 > terminal before continuing (command given in last line of the script output).
