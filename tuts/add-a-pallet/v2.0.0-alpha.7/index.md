@@ -10,17 +10,17 @@ blockchain. However, in the attempts to remain minimal, it does not include most
 ([FRAME](/kb/runtime/frame)).
 
 This guide will show you how you can add the
-[Contracts pallet](https://docs.rs/crate/pallet-contracts/2.0.0-alpha.6) to your runtime in order to
+[Contracts pallet](https://docs.rs/crate/pallet-contracts/2.0.0-alpha.7) to your runtime in order to
 allow your blockchain to support Wasm smart contracts. You can follow similar patterns to add
 additional FRAME pallets to your runtime, however you should note that each pallet is a little
 different in terms of the specific configuration settings needed to use it correctly.
 
 ## Install the Node Template
 
-You should already have version `v2.0.0-alpha.6` of the
+You should already have version `v2.0.0-alpha.7` of the
 [Substrate Node Template](https://github.com/substrate-developer-hub/substrate-node-template)
 compiled on your computer from when you completed the
-[Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-alpha.6).
+[Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-alpha.7).
 If you do not, please complete that tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template
@@ -63,15 +63,16 @@ check out [their official documentation](https://doc.rust-lang.org/cargo/referen
 
 Open `substrate-node-template/runtime/Cargo.toml` and you will see a list of all the dependencies
 your runtime has. For example, it depends on the
-[Balances pallet](https://docs.rs/crate/pallet-balances/2.0.0-alpha.6):
+[Balances pallet](https://docs.rs/crate/pallet-balances/2.0.0-alpha.7):
 
 **`runtime/Cargo.toml`**
 
 ```TOML
 [dependencies.balances]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
 package = 'pallet-balances'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 ```
 
 ### Crate Features
@@ -146,14 +147,16 @@ So based on the `balances` import shown above, the `contracts` import will look 
 
 ```TOML
 [dependencies.contracts]
-default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+default-features = false
 package = 'pallet-contracts'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 
 [dependencies.contracts-primitives]
-default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+default-features = false
 package = 'pallet-contracts-primitives'
-version = '2.0.0-alpha.6'
+tag = 'v2.0.0-alpha.7'
 ```
 
 As with other pallets, the Contracts pallet has an `std` feature. We should build its `std` feature
@@ -177,13 +180,13 @@ If you forget to set the feature, when building to your native binaries you will
 
 ```rust
 error[E0425]: cannot find function `memory_teardown` in module `sandbox`
-  --> ~/.cargo/registry/src/github.com-1ecc6299db9ec823/sp-sandbox-0.8.0-alpha.6/src/../without_std.rs:53:12
+  --> ~/.cargo/git/checkouts/substrate-7e08433d4c370a21/83a6f1a/primitives/sandbox/src/../without_std.rs:53:12
    |
 53 |         sandbox::memory_teardown(self.memory_idx);
    |                  ^^^^^^^^^^^^^^^ not found in `sandbox`
 
 error[E0425]: cannot find function `memory_new` in module `sandbox`
-  --> ~/.cargo/registry/src/github.com-1ecc6299db9ec823/sp-sandbox-0.8.0-alpha.6/src/../without_std.rs:72:18
+  --> ~/.cargo/git/checkouts/substrate-7e08433d4c370a21/83a6f1a/primitives/sandbox/src/../without_std.rs:72:18
    |
 72 |         match sandbox::memory_new(initial, maximum) {
    |
@@ -218,7 +221,7 @@ Every pallet has a configuration trait called `Trait` that the runtime must impl
 
 To figure out what we need to implement for this pallet specifically, you can take a look to the
 FRAME
-[`contracts::Trait` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/trait.Trait.html).
+[`contracts::Trait` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/trait.Trait.html).
 For our runtime, the implementation will look like this:
 
 **`runtime/src/lib.rs`**
@@ -244,9 +247,6 @@ impl timestamp::Trait for Runtime {
 
 /*** Add This Block ***/
 parameter_types! {
-	pub const ContractTransactionBaseFee: Balance = 1 * CENTS;
-	pub const ContractTransactionByteFee: Balance = 10 * MILLICENTS;
-	pub const ContractFee: Balance = 1 * CENTS;
 	pub const TombstoneDeposit: Balance = 1 * DOLLARS;
 	pub const RentByteFee: Balance = 1 * DOLLARS;
 	pub const RentDepositOffset: Balance = 1000 * DOLLARS;
@@ -254,15 +254,12 @@ parameter_types! {
 }
 
 impl contracts::Trait for Runtime {
-	type Currency = Balances;
 	type Time = Timestamp;
 	type Randomness = RandomnessCollectiveFlip;
 	type Call = Call;
 	type Event = Event;
 	type DetermineContractAddress = contracts::SimpleAddressDeterminer<Runtime>;
-	type ComputeDispatchFee = contracts::DefaultDispatchFeeComputor<Runtime>;
 	type TrieIdGenerator = contracts::TrieIdFromParentCounter<Runtime>;
-	type GasPayment = ();
 	type RentPayment = ();
 	type SignedClaimHandicap = contracts::DefaultSignedClaimHandicap;
 	type TombstoneDeposit = TombstoneDeposit;
@@ -270,36 +267,19 @@ impl contracts::Trait for Runtime {
 	type RentByteFee = RentByteFee;
 	type RentDepositOffset = RentDepositOffset;
 	type SurchargeReward = SurchargeReward;
-	type TransactionBaseFee = ContractTransactionBaseFee;
-	type TransactionByteFee = ContractTransactionByteFee;
-	type ContractFee = ContractFee;
-	type CallBaseFee = contracts::DefaultCallBaseFee;
-	type InstantiateBaseFee = contracts::DefaultInstantiateBaseFee;
 	type MaxDepth = contracts::DefaultMaxDepth;
 	type MaxValueSize = contracts::DefaultMaxValueSize;
-	type BlockGasLimit = contracts::DefaultBlockGasLimit;
 }
 /*** End Added Block ***/
 ```
 
-To go into a bit more detail here, we see from the documentation that `type Currency` in the
-Contracts pallet needs to be defined and support the requirements of the trait `Currency`
-
-```rust
-// From the reference documentation, also found in `contracts` pallet:
-//   https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/frame/contracts/src/lib.rs
-
-type Currency: Currency<Self::AccountId>
-```
-
-Fortunately, the Balances pallet implements this type, so we can simply reference `Balances` to gain
-access to it.
-
-Similarly, `type DetermineContractAddress` requires the trait `ContractAddressFor`. The Contracts
-pallet itself implements a type with this trait in `contract::SimpleAddressDeterminator`, thus we
-can use that implementation to satisfy our `contracts::Trait`. At this point, I really recommend you
-explore the source code of the
-[Contracts pallet](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/frame/contracts/src/lib.rs)
+We will use `type DetermineContractAddress` as an example to go into a bit more detail - you can see
+from
+[the `DetermineContractAddress` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/trait.Trait.html#associatedtype.DetermineContractAddress)
+that it requires the trait `ContractAddressFor`. The Contracts pallet itself implements a type with
+this trait in `contract::SimpleAddressDeterminator`, thus we can use that implementation to satisfy
+our `contracts::Trait`. At this point, I really recommend you explore the source code of the
+[Contracts pallet](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.7/frame/contracts/src/lib.rs)
 if things don't make sense or you want to gain a deeper understanding.
 
 ### Adding Contracts to the `construct_runtime!` Macro
@@ -307,7 +287,7 @@ if things don't make sense or you want to gain a deeper understanding.
 Next, we need to add the pallet to the `construct_runtime!` macro. For this, we need to determine
 the types that the pallet exposes so that we can tell the our runtime that they exist. The complete
 list of possible types can be found in the
-[`construct_runtime!` macro documentation](https://docs.rs/frame-support/2.0.0-alpha.6/frame_support/macro.construct_runtime.html).
+[`construct_runtime!` macro documentation](https://docs.rs/frame-support/2.0.0-alpha.7/frame_support/macro.construct_runtime.html).
 
 If we look at the Contracts pallet in detail, we know it has:
 
@@ -331,7 +311,7 @@ construct_runtime!(
         /* --snip-- */
 
         /*** Add This Line ***/
-        Contracts: contracts::{Module, Call, Config<T>, Storage, Event<T>},
+        Contracts: contracts::{Module, Call, Config, Storage, Event<T>},
     }
 );
 ```
@@ -362,9 +342,11 @@ We start by adding the required API dependencies in our `Cargo.toml`.
 
 ```TOML
 [dependencies.contracts-rpc-runtime-api]
+git = 'https://github.com/paritytech/substrate.git'
 default-features = false
 package = 'pallet-contracts-rpc-runtime-api'
-version = '0.8.0-alpha.6'
+version = '0.8.0-alpha.7'
+tag = 'v2.0.0-alpha.7'
 ```
 
 **`runtime/Cargo.toml`**
@@ -461,8 +443,15 @@ don't have to maintain a dedicated `std` feature.
 [dependencies]
 #--snip--
 jsonrpc-core = '14.0.5'
-pallet-contracts-rpc = '0.8.0-alpha.6'
-sc-rpc = '2.0.0-alpha.6'
+
+[dependencies.pallet-contracts-rpc]
+git = 'https://github.com/paritytech/substrate.git'
+version = '0.8.0-alpha.7'
+tag = 'v2.0.0-alpha.7'
+
+[dependencies.sc-rpc]
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'v2.0.0-alpha.7'
 ```
 
 **`node/src/service.rs`**
@@ -500,7 +489,7 @@ add the contracts pallet along with its API.
 
 Not all pallets will have a genesis configuration, but if yours does, you can use its documentation
 to learn about it. For example,
-[`pallet_contracts::GenesisConfig` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/struct.GenesisConfig.html)
+[`pallet_contracts::GenesisConfig` documentation](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/struct.GenesisConfig.html)
 describes all the fields you need to define for the Contracts pallet.
 
 Genesis configurations are controlled in `node/src/chain_spec.rs`. We need to modify this file to
@@ -509,7 +498,7 @@ include the `ContractsConfig` type and the contract price units at the top:
 **`node/src/chain_spec.rs`**
 
 ```rust
-use node_template_runtime::{ContractsConfig, ContractsSchedule, MILLICENTS};
+use node_template_runtime::{ContractsConfig, ContractsSchedule};
 ```
 
 Then inside the `testnet_genesis` function we need to add the contract configuration to the returned
@@ -530,10 +519,9 @@ fn testnet_genesis(initial_authorities: Vec<(AuraId, GrandpaId)>,
         /*** Add This Block ***/
         contracts: Some(ContractsConfig {
             current_schedule: ContractsSchedule {
-                    enable_println,
+                    enable_println: _enable_println,
                     ..Default::default()
             },
-            gas_price: 1 * MILLICENTS,
         }),
         /*** End Added Block ***/
     }
@@ -563,7 +551,7 @@ without purging it but it will remain out of scope for this tutorial.
 In this guide, we walked through specifically how to import the Contracts pallet, but as mentioned
 in the beginning of this guide, each pallet will be a little different. Have no fear, you can always
 refer to the
-[demonstration Substrate node runtime](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.6/bin/node/runtime/)
+[demonstration Substrate node runtime](https://github.com/paritytech/substrate/blob/v2.0.0-alpha.7/bin/node/runtime/)
 which includes nearly every pallet in the FRAME.
 
 In the `Cargo.toml` file of the Substrate node runtime, you will see an example of how to import
@@ -572,7 +560,7 @@ runtime. You can basically copy what was done there to your own runtime.
 
 ### Learn More
 
-- [A minimalist tutorial on writing your runtime pallet in its own package](/tutorials/pallet-in-own-crate/v2.0.0-alpha.6).
+- [A minimalist tutorial on writing your runtime pallet in its own package](/tutorials/pallet-in-own-crate/v2.0.0-alpha.7).
 - With your node now capable of running smart contracts, go learn about
   [Substrate ink! smart contracts](/kb/smart-contracts).
 - [Substrate Recipes](https://substrate.dev/recipes/) offers detailed tutorials about writing
@@ -584,4 +572,4 @@ runtime. You can basically copy what was done there to your own runtime.
 
 ### References
 
-- [FRAME `Contracts` Pallet API](https://docs.rs/pallet-contracts/2.0.0-alpha.6/pallet_contracts/index.html)
+- [FRAME `Contracts` Pallet API](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/index.html)
