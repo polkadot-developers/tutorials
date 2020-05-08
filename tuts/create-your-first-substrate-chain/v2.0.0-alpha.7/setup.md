@@ -41,8 +41,6 @@ It will automatically install:
 - [Git](https://git-scm.com/downloads)
 - [Rust](https://www.rust-lang.org/tools/install)
 
-</details>
-
 If you are using Windows and do not have the
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10), the
 process is a bit harder, but well documented [here](/kb/getting-started/windows-users).

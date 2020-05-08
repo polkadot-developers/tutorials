@@ -519,9 +519,10 @@ fn testnet_genesis(initial_authorities: Vec<(AuraId, GrandpaId)>,
         /*** Add This Block ***/
         contracts: Some(ContractsConfig {
             current_schedule: ContractsSchedule {
-                    enable_println: _enable_println,
+                    enable_println,
                     ..Default::default()
             },
+            gas_price: 1 * MILLICENTS,
         }),
         /*** End Added Block ***/
     }
