@@ -522,7 +522,6 @@ fn testnet_genesis(initial_authorities: Vec<(AuraId, GrandpaId)>,
                     enable_println,
                     ..Default::default()
             },
-            gas_price: 1 * MILLICENTS,
         }),
         /*** End Added Block ***/
     }
