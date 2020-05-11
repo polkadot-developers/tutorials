@@ -17,7 +17,7 @@ underlying currency of your blockchain by managing the _balance_ of all the acco
 If you want to add smart contract functionality to your blockchain, you simply need to include the
 [Contracts](https://docs.rs/pallet-contracts/2.0.0-alpha.7/pallet_contracts/) pallet.
 
-Even things like on-chain governance can be added to your blockchain by including pallets like
+On-chain governance can be added to your blockchain by including pallets like
 [Democracy](https://docs.rs/pallet-democracy/2.0.0-alpha.7/pallet_democracy/),
 [Elections](https://docs.rs/pallet-elections/2.0.0-alpha.7/pallet_elections/), and
 [Collective](https://docs.rs/pallet-collective/2.0.0-alpha.7/pallet_collective/).
