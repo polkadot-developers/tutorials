@@ -10,7 +10,7 @@ In this section we will perform the on-chain runtime upgrading by submitting the
 
 At the end of the last section we compiled our runtime. Substrate Runtimes are always compiled to both Web Assembly (or Wasm) and native code so that the Wasm can be stored on the blockchain and facilitate this forkless upgrade process. Our freshly compiled runtime is stored at `./target/release/wbuild/node-template-runtime/node-template-runtime.compact.wasm`. Ensure this file exists and that it was modified recently.
 
-> Read more about forkless upgrades and Wasm vs native runtimes [here](https://substrate.dev/docs/en/conceptual/core/executor).
+> Read more about forkless upgrades and Wasm vs native runtimes in the [executor](/kb/advanced/executor) article.
 
 ## Starting the User Interface
 
