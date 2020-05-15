@@ -20,7 +20,7 @@ If you have completed that tutorial, but your chain is no longer currently runni
 
 ## Make a Change to the Code
 
-Runtime upgrades are necessary when you want to change the code of a live chain. While it is generally advisale to complete the code as much as possible before launching the chain, changes after launch become necessary to do things like fix bugs or add features.
+Runtime upgrades are necessary when you want to change the code of a live chain. While it is generally advisable to complete the code as much as possible before launching the chain, changes after launch become necessary to do things like fix bugs or add features.
 
 ### Primary Logic Change
 
@@ -55,7 +55,7 @@ substrate-node-template
 +-- ...
 ```
 
-In this file you will see this block of code where the two extrinsics to set the value and increment the value are written.
+In this file you will see this block of code containing two extrinsics used to set and increment the value.
 
 ```rust
 decl_module! {
@@ -94,7 +94,7 @@ pub fn clear_value(origin) -> dispatch::DispatchResult {
 }
 ```
 
-Confirm that your changes are correct so far by running `cargo check -p pallet-template`. If this command completes successfully, you're ready to move on. If not, stop and solve your errors or ask for help before continuing.
+Confirm that your changes are correct so far by running `cargo check -p pallet-template`. If this command completes successfully, you're ready to move on. If not, stop and fix your errors or ask for help before continuing.
 
 ### Bumping the Spec Version
 
@@ -105,7 +105,7 @@ We've already made all of the logic changes we intend to make to our code, and o
 Open the file
 `runtime/src/lib.rs`
 
-```
+```text
 substrate-node-template
 |
 +-- runtime
