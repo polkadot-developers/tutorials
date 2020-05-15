@@ -23,6 +23,7 @@ Alice (or whomever is playing her) should run these commands from node-template 
 # You will be prompted to type `y`
 ./target/release/node-template purge-chain --base-path /tmp/alice --chain local
 ```
+
 ```bash
 # Start Alice's node
 ./target/release/node-template \
@@ -131,9 +132,11 @@ You should now see something like this.
 
 Now that Alice's node is up and running, Bob can join the network by bootstrapping from her node.
 His command will look very similar.
+
 ```bash
 ./target/release/node-template purge-chain --base-path /tmp/bob --chain local
 ```
+
 ```bash
 ./target/release/node-template \
   --base-path /tmp/bob \
