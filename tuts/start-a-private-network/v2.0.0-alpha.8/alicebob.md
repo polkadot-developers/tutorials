@@ -53,29 +53,29 @@ Let's look at those flags in detail:
 When the node starts you should see output similar to this.
 
 ```
-2020-05-07 07:17:47 Substrate Node
-2020-05-07 07:17:47 ✌️  version 2.0.0-alpha.7-e7f3167-x86_64-linux-gnu
-2020-05-07 07:17:47 ❤️  by Anonymous, 2017-2020
-2020-05-07 07:17:47 📋 Chain specification: Local Testnet
-2020-05-07 07:17:47 🏷  Node name: Alice
-2020-05-07 07:17:47 👤 Role: AUTHORITY
-2020-05-07 07:17:47 💾 Database: RocksDb at /tmp/alice/chains/local_testnet/db
-2020-05-07 07:17:47 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-07 07:17:47 🔨 Initializing Genesis block/state (state: 0x8035…184f, header-hash: 0x00ff…211f)
-2020-05-07 07:17:47 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2020-05-07 07:17:47 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2020-05-07 07:17:47 📦 Highest known block at #0
-2020-05-07 07:17:47 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-07 07:17:47 🏷  Local node identity is: QmRBS1wLLS5u7MVGxJTFGJHAfiSWqh2CgaLZ67D4Pait2T
-2020-05-07 07:17:47 〽️ Prometheus server started at 127.0.0.1:9615
-2020-05-07 07:17:52 💤 Idle (0 peers), best: #0 (0x00ff…211f), finalized #0 (0x00ff…211f), ⬇ 0 ⬆ 0
-2020-05-07 07:17:57 💤 Idle (0 peers), best: #0 (0x00ff…211f), finalized #0 (0x00ff…211f), ⬇ 0 ⬆ 0
+2020-05-15 14:51:15 Substrate Node
+2020-05-15 14:51:15 ✌️  version 2.0.0-alpha.8-405717b-x86_64-linux-gnu
+2020-05-15 14:51:15 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
+2020-05-15 14:51:15 📋 Chain specification: Local Testnet
+2020-05-15 14:51:15 🏷  Node name: Alice
+2020-05-15 14:51:15 👤 Role: AUTHORITY
+2020-05-15 14:51:15 💾 Database: RocksDb at /tmp/alice/chains/local_testnet/db
+2020-05-15 14:51:15 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
+2020-05-15 14:51:15 🔨 Initializing Genesis block/state (state: 0xf8cd…bb13, header-hash: 0x8052…90f0)
+2020-05-15 14:51:15 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-05-15 14:51:15 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-05-15 14:51:15 📦 Highest known block at #0
+2020-05-15 14:51:15 Using default protocol ID "sup" because none is configured in the chain specs
+2020-05-15 14:51:15 🏷  Local node identity is: QmRBS1wLLS5u7MVGxJTFGJHAfiSWqh2CgaLZ67D4Pait2T
+2020-05-15 14:51:15 〽️ Prometheus server started at 127.0.0.1:9615
+2020-05-15 14:51:20 💤 Idle (0 peers), best: #0 (0x8052…90f0), finalized #0 (0x8052…90f0), ⬇ 0 ⬆ 0
+2020-05-15 14:51:25 💤 Idle (0 peers), best: #0 (0x8052…90f0), finalized #0 (0x8052…90f0), ⬇ 0 ⬆ 0
 ...
 ```
 
 > **Notes**
 >
-> - `🔨 Initializing Genesis block/state (state: 0x8035…184f, header-hash: 0x00ff…211f)` tells which
+> - `🔨 Initializing Genesis block/state (state: 0xf8cd…bb13, header-hash: 0x8052…90f0)` tells which
 >   genesis block the node is using. When you start the next node, verify that these values are
 >   equal.
 > - `🏷 Local node identity is: QmRBS1wLLS5u7MVGxJTFGJHAfiSWqh2CgaLZ67D4Pait2T` shows the Peer ID
@@ -166,40 +166,30 @@ blocks. You should see some lines like the following in the console that started
 
 ```
 ...
-2020-05-07 07:18:49 Substrate Node
-2020-05-07 07:18:49 ✌️  version 2.0.0-alpha.7-e7f3167-x86_64-linux-gnu
-2020-05-07 07:18:49 ❤️  by Anonymous, 2017-2020
-2020-05-07 07:18:49 📋 Chain specification: Local Testnet
-2020-05-07 07:18:49 🏷  Node name: Bob
-2020-05-07 07:18:49 👤 Role: AUTHORITY
-2020-05-07 07:18:49 💾 Database: RocksDb at /tmp/bob/chains/local_testnet/db
-2020-05-07 07:18:49 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-07 07:18:49 🔨 Initializing Genesis block/state (state: 0x8035…184f, header-hash: 0x00ff…211f)
-2020-05-07 07:18:49 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2020-05-07 07:18:49 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2020-05-07 07:18:49 📦 Highest known block at #0
-2020-05-07 07:18:49 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-07 07:18:49 🏷  Local node identity is: QmfWiCkdbC5iNDDRD2MN9N45CkXzK1ccRXSyn2PZzoL7GJ
-2020-05-07 07:18:49 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30334/p2p/12D3KooWEh7VzjW4XN9y6g665WdpSxY49okoFxWM4S6rF7uf5csN
-2020-05-07 07:18:49 🔍 Discovered new external address for our node: /ip4/192.168.0.120/tcp/30334/p2p/12D3KooWEh7VzjW4XN9y6g665WdpSxY49okoFxWM4S6rF7uf5csN
-2020-05-07 07:18:54 🙌 Starting consensus session on top of parent 0x00ff505992c79d9c9414f4f1d6ec9746b48a17e7b940b2b64c35e665f434211f
-2020-05-07 07:18:54 🎁 Prepared block for proposing at 1 [hash: 0xc73bf53478daeb180581c3cde161ed2f68ee4fa948c6d16317e9062da998c06f; parent_hash: 0x00ff…211f; extrinsics (1): [0x8220…614f]]
-2020-05-07 07:18:54 🔖 Pre-sealed block for proposal at 1. Hash now 0x945406768fb0d727ceb2a92c8a4a8bd8604dcb0794f67f87dde66d538a66dc8c, previously 0xc73bf53478daeb180581c3cde161ed2f68ee4fa948c6d16317e9062da998c06f.
-2020-05-07 07:18:54 ✨ Imported #1 (0x9454…dc8c)
-2020-05-07 07:18:54 💤 Idle (1 peers), best: #1 (0x9454…dc8c), finalized #0 (0x00ff…211f), ⬇ 1.9kiB/s ⬆ 1.9kiB/s
-2020-05-07 07:18:59 💤 Idle (1 peers), best: #1 (0x9454…dc8c), finalized #0 (0x00ff…211f), ⬇ 0.6kiB/s ⬆ 0.6kiB/s
-2020-05-07 07:19:00 ✨ Imported #2 (0xa49b…1bc8)
-2020-05-07 07:19:04 💤 Idle (1 peers), best: #2 (0xa49b…1bc8), finalized #0 (0x00ff…211f), ⬇ 0.8kiB/s ⬆ 0.7kiB/s
-2020-05-07 07:19:06 🙌 Starting consensus session on top of parent 0xa49b8afb4bd1449371675978f2ff0f8f990bbef22f4d98a450720cb2a2221bc8
-2020-05-07 07:19:06 🎁 Prepared block for proposing at 3 [hash: 0x61985274e7bef49ae0083c7a1f24652ef8fddffbe0f58fd48cc68a8bdee82348; parent_hash: 0xa49b…1bc8; extrinsics (1): [0xc1c2…6936]]
-2020-05-07 07:19:06 🔖 Pre-sealed block for proposal at 3. Hash now 0x53615ab6a7c3c866ebc812b24781fc772251becc9a321696e42b0cba9c44ab7a, previously 0x61985274e7bef49ae0083c7a1f24652ef8fddffbe0f58fd48cc68a8bdee82348.
-2020-05-07 07:19:06 ✨ Imported #3 (0x5361…ab7a)
-2020-05-07 07:19:09 💤 Idle (1 peers), best: #3 (0x5361…ab7a), finalized #1 (0x9454…dc8c), ⬇ 1.0kiB/s ⬆ 1.2kiB/s
+2020-05-15 14:53:50 💤 Idle (0 peers), best: #0 (0x8052…90f0), finalized #0 (0x8052…90f0), ⬇ 0 ⬆ 0
+2020-05-15 14:53:55 💤 Idle (0 peers), best: #0 (0x8052…90f0), finalized #0 (0x8052…90f0), ⬇ 0 ⬆ 0
+2020-05-15 14:53:56 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWBqpRKmr35HLTbyZVwxbge6oiGJEVq9rbMVuMcJfsKCQR
+2020-05-15 14:54:00 🙌 Starting consensus session on top of parent 0x805231af24954e4bc81cbad94219279c2d80fc462110ebd2855ac16afd9b90f0
+2020-05-15 14:54:00 🎁 Prepared block for proposing at 1 [hash: 0xbe2001da24ccd6cc437131ef680ac6a73fe9f1f26c69d16b77300326d8c4dafe; parent_hash: 0x8052…90f0; extrinsics (1): [0x19b7…decb]]
+2020-05-15 14:54:00 🔖 Pre-sealed block for proposal at 1. Hash now 0x56474d42ffc080e7f2863a69e2575b93c05cf25540508115b9c0bfecc67f8d93, previously 0xbe2001da24ccd6cc437131ef680ac6a73fe9f1f26c69d16b77300326d8c4dafe.
+2020-05-15 14:54:00 ✨ Imported #1 (0x5647…8d93)
+2020-05-15 14:54:00 💤 Idle (1 peers), best: #1 (0x5647…8d93), finalized #0 (0x8052…90f0), ⬇ 1.1kiB/s ⬆ 1.2kiB/s
+2020-05-15 14:54:05 💤 Idle (1 peers), best: #1 (0x5647…8d93), finalized #0 (0x8052…90f0), ⬇ 0.6kiB/s ⬆ 0.6kiB/s
+2020-05-15 14:54:06 🙌 Starting consensus session on top of parent 0x56474d42ffc080e7f2863a69e2575b93c05cf25540508115b9c0bfecc67f8d93
+2020-05-15 14:54:06 🎁 Prepared block for proposing at 2 [hash: 0x3d51104d3f4362ab28dcd18a0295200275b07d930295e04408e4afc5c55395aa; parent_hash: 0x5647…8d93; extrinsics (1): [0x4b1d…01a8]]
+2020-05-15 14:54:06 Encountered consensus error: CannotSign([142, 175, 4, 21, 22, 135, 115, 99, 38, 201, 254, 161, 126, 37, 252, 82, 135, 97, 54, 147, 201, 18, 144, 156, 178, 38, 170, 71, 148, 242, 106, 72], "An unknown keystore error occurred: No such file or directory (os error 2)")
+2020-05-15 14:54:06 ✨ Imported #2 (0x90f1…3077)
+2020-05-15 14:54:10 💤 Idle (1 peers), best: #2 (0x90f1…3077), finalized #0 (0x8052…90f0), ⬇ 0.7kiB/s ⬆ 0.7kiB/s
+2020-05-15 14:54:12 🙌 Starting consensus session on top of parent 0x90f1141fe77e6dd9e003d93b9d0a6dcc5c91e653f5f182cb318177f949fd3077
+2020-05-15 14:54:12 🎁 Prepared block for proposing at 3 [hash: 0x0e12b4991a8523f216d3ee51e5d6da1686eddbf006940044f00f3a9a19aa5f6d; parent_hash: 0x90f1…3077; extrinsics (1): [0xdbd6…9785]]
+2020-05-15 14:54:12 🔖 Pre-sealed block for proposal at 3. Hash now 0xf2dfc4edfc8357726f9fd64ee3130a0ae1a9de87ed7a18ab926f413ee018f4d9, previously 0x0e12b4991a8523f216d3ee51e5d6da1686eddbf006940044f00f3a9a19aa5f6d.
+2020-05-15 14:54:12 ✨ Imported #3 (0xf2df…f4d9)
+2020-05-15 14:54:15 💤 Idle (1 peers), best: #3 (0xf2df…f4d9), finalized #1 (0x5647…8d93), ⬇ 1.0kiB/s ⬆ 0.9kiB/s
 ...
 ```
 
 These lines shows that Bob has peered with Alice (**`1 peers`**), they have produced some blocks
-(**`best: #3 (0x5361…ab7a)`**), and blocks are being finalized (**`finalized #1 (0x9454…dc8c)`**).
+(**`best: #3 (0xf2df…f4d9)`**), and blocks are being finalized (**`finalized #1 (0x5647…8d93)`**).
 
 Looking at the console that started Bob's node, you should see something similar.
 
