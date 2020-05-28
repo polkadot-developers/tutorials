@@ -24,38 +24,38 @@ You should see something like this if your node is running successfully:
 ```
 $ ./target/release/node-template --dev
 
-2020-05-15 14:20:12 Running in --dev mode, RPC CORS has been disabled.
-2020-05-15 14:20:12 Substrate Node
-2020-05-15 14:20:12 ✌️  version 2.0.0-alpha.8-4588f92-x86_64-linux-gnu
-2020-05-15 14:20:12 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
-2020-05-15 14:20:12 📋 Chain specification: Development
-2020-05-15 14:20:12 🏷  Node name: absorbing-disgust-9031
-2020-05-15 14:20:12 👤 Role: AUTHORITY
-2020-05-15 14:20:12 💾 Database: RocksDb at /home/dan/.local/share/node-template/chains/dev/db
-2020-05-15 14:20:12 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-15 14:20:12 🔨 Initializing Genesis block/state (state: 0xcb0d…ea04, header-hash: 0x7a0a…2d1a)
-2020-05-15 14:20:12 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2020-05-15 14:20:12 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2020-05-15 14:20:12 📦 Highest known block at #0
-2020-05-15 14:20:12 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-15 14:20:12 🏷  Local node identity is: QmfHEbdmVZHCBwKJFvczRt5owAzEbtF7Ao7oPQLvBq645c
-2020-05-15 14:20:12 〽️ Prometheus server started at 127.0.0.1:9615
-2020-05-15 14:20:17 💤 Idle (0 peers), best: #0 (0x7a0a…2d1a), finalized #0 (0x7a0a…2d1a), ⬇ 0 ⬆ 0
-2020-05-15 14:20:18 🙌 Starting consensus session on top of parent 0x7a0a487a455519ea551b3e9b87982761f0612e0e95946e66b79c4b7ac3c22d1a
-2020-05-15 14:20:18 🎁 Prepared block for proposing at 1 [hash: 0x0d9d9425352cdd06916572a6bddf920385e5d605f8ecbd3ffda3caea249ceead; parent_hash: 0x7a0a…2d1a; extrinsics (1): [0xdb72…dc32]]
-2020-05-15 14:20:18 🔖 Pre-sealed block for proposal at 1. Hash now 0xe3f19ac504d7347378a526170d477849608c8fedae53cd7760ef0685a4f7365a, previously 0x0d9d9425352cdd06916572a6bddf920385e5d605f8ecbd3ffda3caea249ceead.
-2020-05-15 14:20:18 ✨ Imported #1 (0xe3f1…365a)
-2020-05-15 14:20:22 💤 Idle (0 peers), best: #1 (0xe3f1…365a), finalized #0 (0x7a0a…2d1a), ⬇ 0 ⬆ 0
-2020-05-15 14:20:24 🙌 Starting consensus session on top of parent 0xe3f19ac504d7347378a526170d477849608c8fedae53cd7760ef0685a4f7365a
-2020-05-15 14:20:24 🎁 Prepared block for proposing at 2 [hash: 0xf9449a1c18971c426ab21ba79770d883527e82eebf3321490d31caa3f5acec6c; parent_hash: 0xe3f1…365a; extrinsics (1): [0x8560…e04f]]
-2020-05-15 14:20:24 🔖 Pre-sealed block for proposal at 2. Hash now 0x884a6aa7001905f7eaf0d0d21be52f93132f33d3eeac26b46a75f4014f9f302c, previously 0xf9449a1c18971c426ab21ba79770d883527e82eebf3321490d31caa3f5acec6c.
-2020-05-15 14:20:24 ✨ Imported #2 (0x884a…302c)
-2020-05-15 14:20:27 💤 Idle (0 peers), best: #2 (0x884a…302c), finalized #0 (0x7a0a…2d1a), ⬇ 0 ⬆ 0
-2020-05-15 14:20:30 🙌 Starting consensus session on top of parent 0x884a6aa7001905f7eaf0d0d21be52f93132f33d3eeac26b46a75f4014f9f302c
-2020-05-15 14:20:30 🎁 Prepared block for proposing at 3 [hash: 0xf6d4ce51755cc638d93f662c877a46bac58c2cea32748781393c1a9489f15aeb; parent_hash: 0x884a…302c; extrinsics (1): [0x300a…8635]]
-2020-05-15 14:20:30 🔖 Pre-sealed block for proposal at 3. Hash now 0x012793b140237843a45c9228393a3318c0f7df027bbe2d16a4277259331c53d8, previously 0xf6d4ce51755cc638d93f662c877a46bac58c2cea32748781393c1a9489f15aeb.
-2020-05-15 14:20:30 ✨ Imported #3 (0x0127…53d8)
-2020-05-15 14:20:32 💤 Idle (0 peers), best: #3 (0x0127…53d8), finalized #1 (0xe3f1…365a), ⬇ 0 ⬆ 0
+2020-05-28 11:56:14 Running in --dev mode, RPC CORS has been disabled.
+2020-05-28 11:56:14 Substrate Node
+2020-05-28 11:56:14 ✌️  version 2.0.0-rc2-83d7157-x86_64-linux-gnu
+2020-05-28 11:56:14 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
+2020-05-28 11:56:14 📋 Chain specification: Development
+2020-05-28 11:56:14 🏷  Node name: marvelous-building-7886
+2020-05-28 11:56:14 👤 Role: AUTHORITY
+2020-05-28 11:56:14 💾 Database: RocksDb at /home/dan/.local/share/node-template/chains/dev/db
+2020-05-28 11:56:14 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
+2020-05-28 11:56:14 🔨 Initializing Genesis block/state (state: 0x3d72…572b, header-hash: 0xf1eb…57a1)
+2020-05-28 11:56:14 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-05-28 11:56:14 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-05-28 11:56:14 📦 Highest known block at #0
+2020-05-28 11:56:14 Using default protocol ID "sup" because none is configured in the chain specs
+2020-05-28 11:56:14 🏷  Local node identity is: 12D3KooWMaPpCv7hp7wArmG6cAuyz8HXqD88zKNvVQ34CoCJsXmX (legacy representation: QmfHEbdmVZHCBwKJFvczRt5owAzEbtF7Ao7oPQLvBq645c)
+2020-05-28 11:56:14 〽️ Prometheus server started at 127.0.0.1:9615
+2020-05-28 11:56:18 🙌 Starting consensus session on top of parent 0xf1ebbaf6fdedadc9a657a1a7efdca8c923e0e39b16d8bee0222dfc7083fd57a1
+2020-05-28 11:56:18 🎁 Prepared block for proposing at 1 [hash: 0x8197b3198b6080c7bc361b6e9a6340ad2d5908986510e3eabd66c123f001e9c3; parent_hash: 0xf1eb…57a1; extrinsics (1): [0x98e6…4426]]
+2020-05-28 11:56:18 🔖 Pre-sealed block for proposal at 1. Hash now 0xa0974d53e322ca1c5712b4a80708de1091122239e90803ca4795bba6d180eea9, previously 0x8197b3198b6080c7bc361b6e9a6340ad2d5908986510e3eabd66c123f001e9c3.
+2020-05-28 11:56:18 ✨ Imported #1 (0xa097…eea9)
+2020-05-28 11:56:19 💤 Idle (0 peers), best: #1 (0xa097…eea9), finalized #0 (0xf1eb…57a1), ⬇ 0 ⬆ 0
+2020-05-28 11:56:24 🙌 Starting consensus session on top of parent 0xa0974d53e322ca1c5712b4a80708de1091122239e90803ca4795bba6d180eea9
+2020-05-28 11:56:24 🎁 Prepared block for proposing at 2 [hash: 0x56cc45eda5414ba74498997b4073a74297bc1e05481865b7b6913d56ac48e22e; parent_hash: 0xa097…eea9; extrinsics (1): [0xbacc…ce2b]]
+2020-05-28 11:56:24 🔖 Pre-sealed block for proposal at 2. Hash now 0x10186a64b4875a3a48cf80d69342b882e588a3e08cc5a16755c380bdb27ed03e, previously 0x56cc45eda5414ba74498997b4073a74297bc1e05481865b7b6913d56ac48e22e.
+2020-05-28 11:56:24 ✨ Imported #2 (0x1018…d03e)
+2020-05-28 11:56:24 💤 Idle (0 peers), best: #2 (0x1018…d03e), finalized #0 (0xf1eb…57a1), ⬇ 0 ⬆ 0
+2020-05-28 11:56:29 💤 Idle (0 peers), best: #2 (0x1018…d03e), finalized #0 (0xf1eb…57a1), ⬇ 0 ⬆ 0
+2020-05-28 11:56:30 🙌 Starting consensus session on top of parent 0x10186a64b4875a3a48cf80d69342b882e588a3e08cc5a16755c380bdb27ed03e
+2020-05-28 11:56:30 🎁 Prepared block for proposing at 3 [hash: 0x3427cabfd65091e81859721888ebb2221523ae6ea7b2c6ae446e91eb1306b6d3; parent_hash: 0x1018…d03e; extrinsics (1): [0x0ddb…9c1f]]
+2020-05-28 11:56:30 🔖 Pre-sealed block for proposal at 3. Hash now 0x5a44bc09ad96b2b900c61e479035d58cdcc3905b8762e8efb4425deb508b3154, previously 0x3427cabfd65091e81859721888ebb2221523ae6ea7b2c6ae446e91eb1306b6d3.
+2020-05-28 11:56:30 ✨ Imported #3 (0x5a44…3154)
+2020-05-28 11:56:34 💤 Idle (0 peers), best: #3 (0x5a44…3154), finalized #1 (0xa097…eea9), ⬇ 0 ⬆ 0
 ```
 
 If the number after `finalized:` is increasing, your blockchain is producing new blocks and reaching
@@ -107,8 +107,8 @@ made token transfers among users. We hope you'll continue learning about Substra
 Your next step may be:
 
 - Decentralize your network with more nodes in the
-  [Start a Private Network](/tutorials/start-a-private-network/v2.0.0-alpha.8) tutorial.
-- Add custom functionality in the [Build a dApp](/tutorials/build-a-dapp/v2.0.0-alpha.8) tutorial.
+  [Start a Private Network](/tutorials/start-a-private-network/v2.0.0-rc2) tutorial.
+- Add custom functionality in the [Build a dApp](/tutorials/build-a-dapp/v2.0.0-rc2) tutorial.
 
 If you experienced any issues with this tutorial or want to provide feedback, feel free to
 [open a GitHub issue](https://github.com/substrate-developer-hub/tutorials/issues/new) or reach out
