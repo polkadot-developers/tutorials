@@ -46,24 +46,24 @@ Here are some differences from when we launched as Alice.
 You should see the console outputs something as follows:
 
 ```bash
-2020-05-15 16:09:11 Substrate Node
-2020-05-15 16:09:11 ✌️  version 2.0.0-alpha.8-405717b-x86_64-linux-gnu
-2020-05-15 16:09:11 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
-2020-05-15 16:09:11 📋 Chain specification: Local Testnet
-2020-05-15 16:09:11 🏷  Node name: MyNode01
-2020-05-15 16:09:11 👤 Role: AUTHORITY
-2020-05-15 16:09:11 💾 Database: RocksDb at /tmp/node01/chains/local_testnet/db
-2020-05-15 16:09:11 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-15 16:09:11 🔨 Initializing Genesis block/state (state: 0x248c…760b, header-hash: 0x3596…bbc9)
-2020-05-15 16:09:11 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2020-05-15 16:09:11 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2020-05-15 16:09:11 📦 Highest known block at #0
-2020-05-15 16:09:11 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-15 16:09:11 🏷  Local node identity is: QmUy8Mpwiwh89ap66xwRK8BT2MdKr4575pwnZHuP22SsNT
-2020-05-15 16:09:11 〽️ Prometheus server started at 127.0.0.1:9615
-2020-05-15 16:09:16 💤 Idle (0 peers), best: #0 (0x3596…bbc9), finalized #0 (0x3596…bbc9), ⬇ 0 ⬆ 0
-2020-05-15 16:09:21 💤 Idle (0 peers), best: #0 (0x3596…bbc9), finalized #0 (0x3596…bbc9), ⬇ 0 ⬆ 0
-2020-05-15 16:09:26 💤 Idle (0 peers), best: #0 (0x3596…bbc9), finalized #0 (0x3596…bbc9), ⬇ 0 ⬆ 0
+2020-05-28 13:43:02 Substrate Node
+2020-05-28 13:43:02 ✌️  version 2.0.0-rc2-83d7157-x86_64-linux-gnu
+2020-05-28 13:43:02 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
+2020-05-28 13:43:02 📋 Chain specification: Local Testnet
+2020-05-28 13:43:02 🏷  Node name: MyNode01
+2020-05-28 13:43:02 👤 Role: AUTHORITY
+2020-05-28 13:43:02 💾 Database: RocksDb at /tmp/node01/chains/local_testnet/db
+2020-05-28 13:43:02 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
+2020-05-28 13:43:03 🔨 Initializing Genesis block/state (state: 0x7f04…10af, header-hash: 0x4328…9cc8)
+2020-05-28 13:43:03 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-05-28 13:43:03 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-05-28 13:43:03 📦 Highest known block at #0
+2020-05-28 13:43:03 Using default protocol ID "sup" because none is configured in the chain specs
+2020-05-28 13:43:03 🏷  Local node identity is: 12D3KooWMNy8bTtD81UCv5Wm44iHeCpygr8LAvCRcAdq4mA5PPie (legacy representation: QmXHC17m265EJK51YpF8uq5wmQEsS86av66vpx9oeckuBW)
+2020-05-28 13:43:03 〽️ Prometheus server started at 127.0.0.1:9615
+2020-05-28 13:43:08 💤 Idle (0 peers), best: #0 (0x4328…9cc8), finalized #0 (0x4328…9cc8), ⬇ 0 ⬆ 0
+2020-05-28 13:43:13 💤 Idle (0 peers), best: #0 (0x4328…9cc8), finalized #0 (0x4328…9cc8), ⬇ 0 ⬆ 0
+2020-05-28 13:43:18 💤 Idle (0 peers), best: #0 (0x4328…9cc8), finalized #0 (0x4328…9cc8), ⬇ 0 ⬆ 0
 ```
 
 ## Add Keys to Keystore
@@ -130,30 +130,28 @@ As before, we specify another `base-path`, give it another `name`, and also spec
 Once the second node is up, you should see them authoring:
 
 ```
-2020-05-15 16:12:07 Substrate Node
-2020-05-15 16:12:07 ✌️  version 2.0.0-alpha.8-405717b-x86_64-linux-gnu
-2020-05-15 16:12:07 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
-2020-05-15 16:12:07 📋 Chain specification: Local Testnet
-2020-05-15 16:12:07 🏷  Node name: MyNode02
-2020-05-15 16:12:07 👤 Role: AUTHORITY
-2020-05-15 16:12:07 💾 Database: RocksDb at /tmp/node02/chains/local_testnet/db
-2020-05-15 16:12:07 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-15 16:12:07 🔨 Initializing Genesis block/state (state: 0x248c…760b, header-hash: 0x3596…bbc9)
-2020-05-15 16:12:07 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2020-05-15 16:12:07 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2020-05-15 16:12:07 📦 Highest known block at #0
-2020-05-15 16:12:07 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-15 16:12:07 🏷  Local node identity is: QmVLjNfifpgz1NjBgVSrpKEqGsTZ5XfUjjCd6g3Wv2BN3d
-2020-05-15 16:12:08 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30334/p2p/12D3KooWSqkyaaQv2mPezCMoDiCquD4ui9qoGvBFVJkHsKjkmMdC
-2020-05-15 16:12:12 🙌 Starting consensus session on top of parent 0x35961ac2b8d4c62a1aeb83f4f6ceb12c4db73b816f9c64330eea07979095bbc9
-2020-05-15 16:12:12 🎁 Prepared block for proposing at 1 [hash: 0xb0a018360c2ea3f7d69c5e0965d66f72ec82fa3a0a6656b23d8566713c027665; parent_hash: 0x3596…bbc9; extrinsics (1): [0x15d9…e653]]
-2020-05-15 16:12:12 Encountered consensus error: CannotSign([254, 40, 20, 241, 117, 216, 125, 217, 163, 123, 173, 42, 164, 116, 3, 0, 28, 120, 208, 207, 172, 81, 210, 127, 78, 172, 243, 157, 254, 169, 245, 121], "An unknown keystore error occurred: No such file or directory (os error 2)")
-2020-05-15 16:12:12 ✨ Imported #1 (0x26be…df99)
-2020-05-15 16:12:12 💤 Idle (1 peers), best: #1 (0x26be…df99), finalized #0 (0x3596…bbc9), ⬇ 0.7kiB/s ⬆ 0.6kiB/s
+2020-05-28 13:45:41 Substrate Node
+2020-05-28 13:45:41 ✌️  version 2.0.0-rc2-83d7157-x86_64-linux-gnu
+2020-05-28 13:45:41 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
+2020-05-28 13:45:41 📋 Chain specification: Local Testnet
+2020-05-28 13:45:41 🏷  Node name: MyNode02
+2020-05-28 13:45:41 👤 Role: AUTHORITY
+2020-05-28 13:45:41 💾 Database: RocksDb at /tmp/node02/chains/local_testnet/db
+2020-05-28 13:45:41 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
+2020-05-28 13:45:41 🔨 Initializing Genesis block/state (state: 0x7f04…10af, header-hash: 0x4328…9cc8)
+2020-05-28 13:45:41 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-05-28 13:45:41 ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-05-28 13:45:41 📦 Highest known block at #0
+2020-05-28 13:45:41 Using default protocol ID "sup" because none is configured in the chain specs
+2020-05-28 13:45:41 🏷  Local node identity is: 12D3KooWEnRZxA2Uu2p2LNgttWy6QX6NyR4tFgwn5boqRcU2cqkx (legacy representation: QmXgKEtm3m6zgNpgrGQKk7yxZNCw6ivb64Pz2q9nso4W87)
+2020-05-28 13:45:45 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30334/p2p/12D3KooWEnRZxA2Uu2p2LNgttWy6QX6NyR4tFgwn5boqRcU2cqkx
+2020-05-28 13:45:46 💤 Idle (1 peers), best: #0 (0x4328…9cc8), finalized #0 (0x4328…9cc8), ⬇ 1.1kiB/s ⬆ 1.1kiB/s
+2020-05-28 13:45:48 ✨ Imported #1 (0xa6d7…4d0e)
+2020-05-28 13:45:51 💤 Idle (1 peers), best: #1 (0xa6d7…4d0e), finalized #0 (0x4328…9cc8), ⬇ 0.2kiB/s ⬆ 0.2kiB/s
 ```
 
 The final lines shows that your node has peered with another (**`1 peers`**), and they have produced
-a block (**`best: #1 (0x26be…df99)`**).
+a block (**`best: #1 (0xa6d7…4d0e)`**).
 
 Now you're ready to add keys to its keystore by following the process (in the previous section) just
 like you did for the first node.
@@ -165,30 +163,24 @@ like you did for the first node.
 > see the same genesis block and state root hashes.
 
 You will notice that even after you add the keys for the second node no block finalization has
-happened (**`finalized #0 (0x3596…bbc9)`**). Substrate nodes require a restart after inserting a
+happened (**`finalized #0 (0x1b54…0198)`**). Substrate nodes require a restart after inserting a
 grandpa key. Kill your nodes and restart them with the same commands you used previously. Now blocks
 should be finalized.
 
 ```
-2020-05-15 16:15:27 Substrate Node
-2020-05-15 16:15:27 ✌️  version 2.0.0-alpha.8-405717b-x86_64-linux-gnu
-2020-05-15 16:15:27 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
-2020-05-15 16:15:27 📋 Chain specification: Local Testnet
-2020-05-15 16:15:27 🏷  Node name: MyNode02
-2020-05-15 16:15:27 👤 Role: AUTHORITY
-2020-05-15 16:15:27 💾 Database: RocksDb at /tmp/node02/chains/local_testnet/db
-2020-05-15 16:15:27 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
-2020-05-15 16:15:27 📦 Highest known block at #18
-2020-05-15 16:15:27 Using default protocol ID "sup" because none is configured in the chain specs
-2020-05-15 16:15:27 🏷  Local node identity is: QmVLjNfifpgz1NjBgVSrpKEqGsTZ5XfUjjCd6g3Wv2BN3d
-2020-05-15 16:15:30 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30334/p2p/12D3KooWSqkyaaQv2mPezCMoDiCquD4ui9qoGvBFVJkHsKjkmMdC
-2020-05-15 16:15:32 💤 Idle (1 peers), best: #18 (0x6bcd…501d), finalized #16 (0xa3f1…7988), ⬇ 1.5kiB/s ⬆ 1.6kiB/s
-2020-05-15 16:15:36 🙌 Starting consensus session on top of parent 0x6bcda46690c678a8f18cf343e499b35ddc59f5bf4d735082bb5fd866a693501d
-2020-05-15 16:15:36 Timeout fired waiting for transaction pool to be ready. Proceeding to block production anyway.
-2020-05-15 16:15:36 🎁 Prepared block for proposing at 19 [hash: 0x52fcbd882a3a393990d79e837839e2d449ceaf029fb6c31b514dba55f21f7382; parent_hash: 0x6bcd…501d; extrinsics (1): [0x79d4…050c]]
-2020-05-15 16:15:36 Encountered consensus error: CannotSign([254, 40, 20, 241, 117, 216, 125, 217, 163, 123, 173, 42, 164, 116, 3, 0, 28, 120, 208, 207, 172, 81, 210, 127, 78, 172, 243, 157, 254, 169, 245, 121], "An unknown keystore error occurred: No such file or directory (os error 2)")
-2020-05-15 16:15:36 ✨ Imported #19 (0xd4f3…a7a0)
-2020-05-15 16:15:37 💤 Idle (1 peers), best: #19 (0xd4f3…a7a0), finalized #16 (0xa3f1…7988), ⬇ 1.1kiB/s ⬆ 1.1kiB/s
+2020-05-28 13:53:12 Substrate Node
+2020-05-28 13:53:12 ✌️  version 2.0.0-rc2-83d7157-x86_64-linux-gnu
+2020-05-28 13:53:12 ❤️  by Substrate DevHub <https://github.com/substrate-developer-hub>, 2017-2020
+2020-05-28 13:53:12 📋 Chain specification: Local Testnet
+2020-05-28 13:53:12 🏷  Node name: MyNode02
+2020-05-28 13:53:12 👤 Role: AUTHORITY
+2020-05-28 13:53:12 💾 Database: RocksDb at /tmp/node02/chains/local_testnet/db
+2020-05-28 13:53:12 ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
+2020-05-28 13:53:12 📦 Highest known block at #42
+2020-05-28 13:53:12 Using default protocol ID "sup" because none is configured in the chain specs
+2020-05-28 13:53:12 🏷  Local node identity is: 12D3KooWEnRZxA2Uu2p2LNgttWy6QX6NyR4tFgwn5boqRcU2cqkx (legacy representation: QmXgKEtm3m6zgNpgrGQKk7yxZNCw6ivb64Pz2q9nso4W87)
+2020-05-28 13:53:14 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30334/p2p/12D3KooWEnRZxA2Uu2p2LNgttWy6QX6NyR4tFgwn5boqRcU2cqkx
+2020-05-28 13:53:18 💤 Idle (1 peers), best: #42 (0xf09d…dbfa), finalized #40 (0x0e49…3118), ⬇ 1.7kiB/s ⬆ 1.7kiB/s
 ```
 
 ## You're Finished

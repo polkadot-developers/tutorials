@@ -24,7 +24,7 @@ the one we used before. To start, we need to export the chain spec to a file nam
 ```bash
 # Export the local chainspec to json
 $ ./target/release/node-template build-spec --disable-default-bootnode --chain local > customSpec.json
-2020-05-07 07:35:16 Building chain spec
+2020-05-28 13:29:05 Building chain spec
 ```
 
 The file we just created contains several fields, and you can learn a lot by exploring them. By far
@@ -87,7 +87,8 @@ the data in its local storage. Distributing a raw spec ensures that each node wi
 the proper storage keys.
 
 ```bash
-./target/release/node-template build-spec --chain=customSpec.json --raw --disable-default-bootnode > customSpecRaw.json
+$ ./target/release/node-template build-spec --chain=customSpec.json --raw --disable-default-bootnode > customSpecRaw.json
+2020-05-28 13:31:37 Building chain spec
 ```
 
 Finally share the `customSpecRaw.json` with your all the other validators in the network.
