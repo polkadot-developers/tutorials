@@ -152,9 +152,14 @@ export default function ProofOfExistence (props) {
             accountPair={accountPair}
             label={'Create Claim'}
             setStatus={setStatus}
-            type='TRANSACTION'
-            attrs={{ params: [digest], tx: api.tx.templateModule.createClaim }}
+            type='SIGNED-TX'
             disabled={isClaimed() || !digest}
+            attrs={{
+              palletRpc: 'templateModule',
+              callable: 'createClaim',
+              inputParams: [digest],
+              paramFields: [true]
+            }}
           />
           {/* Button to revoke a claim. Only active if a file is selected,
           and is already claimed. Updates the `status`. */}
@@ -162,9 +167,14 @@ export default function ProofOfExistence (props) {
             accountPair={accountPair}
             label='Revoke Claim'
             setStatus={setStatus}
-            type='TRANSACTION'
-            attrs={{ params: [digest], tx: api.tx.templateModule.revokeClaim }}
+            type='SIGNED-TX'
             disabled={!isClaimed() || owner !== accountPair.address}
+            attrs={{
+              palletRpc: 'templateModule',
+              callable: 'revokeClaim',
+              inputParams: [digest],
+              paramFields: [true]
+            }}
           />
         </Form.Field>
         {/* Status message about the transaction. */}
