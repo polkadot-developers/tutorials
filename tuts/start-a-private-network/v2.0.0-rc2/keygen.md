@@ -17,7 +17,7 @@ Subkey is a tool the generates keys specifically designed to be used with Substr
 Begin by compiling and installing the utility. This may take up to 15 minutes or so.
 
 ```bash
-cargo install --force subkey --git https://github.com/paritytech/substrate --tag v2.0.0-alpha.6
+cargo install --force subkey --git https://github.com/paritytech/substrate --tag v2.0.0-rc2
 ```
 
 We will need to generate at least **2** keys from each type. Every node will need to have its own
@@ -104,16 +104,3 @@ learning purposes.
 | **ED25519**   |                                                                              |
 | Public key    | `0x0fe9065f6450c5501df3efa6b13958949cb4b81a2147d68c14ad25366be1ccb4`         |
 | SS58 Address  | `5CRZoFgJs4zLzCCAGoCUUs2MRmuD5BKAh17pWtb62LMoCi9h`                           |
-
-### Pair 3
-
-| Key           | Value                                                                        |
-| ------------- | ---------------------------------------------------------------------------- |
-| Secret phrase | `ridge easy shift marine leave vendor clever mammal clown input race hollow` |
-| Secret seed   | `0xfe97888532db5ecfbf87206184a232c7fc336d7aadb776419b24e3c0ff70c31a`         |
-| **SR25519**   |                                                                              |
-| Public key    | `0x103aebd7ab1e971be446b1a13eb40541ec8ec162deb71b6ae594b3ce02ee5137`         |
-| SS58 Address  | `5CRz8J64ksqQ1DHuCUhyc5x1C2tC7exbQpkFVqEmfaG9RKdc`                           |
-| **ED25519**   |                                                                              |
-| Public key    | `0x4822d2a0b3c5665050cd3470717439ca23a3c3387b65efcf6a9fbcc93571ea4a`         |
-| SS58 Address  | `5DhHecmfy3hB9TpWJvCRXi1EwU3A4AwYvmCYJemsUUAcxf4V`                           |

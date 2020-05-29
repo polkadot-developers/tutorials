@@ -27,13 +27,11 @@ of those prerequisites installed for you:
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 ```
 
+You can view the source code for this script by visiting
+[https://getsubstrate.io](https://getsubstrate.io) in your browser.
+
 > If you did not have Rust installed prior to running this script, make sure to add restart your
 > terminal before continuing (command given in last line of the script output).
-
-<details>
-<summary>Learn what this script does.</summary>
-
-> If you want to see specifically what this script does just visit: https://getsubstrate.io
 
 It will automatically install:
 
@@ -42,8 +40,6 @@ It will automatically install:
 - [OpenSSL](https://www.openssl.org/)
 - [Git](https://git-scm.com/downloads)
 - [Rust](https://www.rust-lang.org/tools/install)
-
-</details>
 
 If you are using Windows and do not have the
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10), the
@@ -54,10 +50,10 @@ process is a bit harder, but well documented [here](/kb/getting-started/windows-
 Once the prerequisites are installed, you need to set up the skeleton for our project. The Substrate
 Node Template serves as a good starting point for building on Substrate.
 
-1. Clone the Substrate Node Template (version `v2.0.0-alpha.6`).
+1. Clone the Substrate Node Template (version `v2.0.0-rc2`).
 
    ```bash
-   	git clone -b v2.0.0-alpha.6 --depth 1 https://github.com/substrate-developer-hub/substrate-node-template
+   	git clone -b v2.0.0-rc2 --depth 1 https://github.com/substrate-developer-hub/substrate-node-template
    ```
 
 2. Initialize your WebAssembly build environment

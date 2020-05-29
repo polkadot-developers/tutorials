@@ -9,10 +9,10 @@ validator/authority set of your choosing using Substrate.
 
 ## Install the Node Template
 
-You should already have version `v2.0.0-alpha.6` of the
+You should already have version `v2.0.0-rc2` of the
 [Substrate Node Template](https://github.com/substrate-developer-hub/substrate-node-template)
 compiled on your computer from when you completed the
-[Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-alpha.6).
+[Create Your First Substrate Chain Tutorial](/tutorials/create-your-first-substrate-chain/v2.0.0-rc2).
 If you do not, please complete that tutorial.
 
 > Experienced developers who truly prefer to skip that tutorial, you may install the node template
