@@ -65,7 +65,7 @@ consensus about the state they describe!
 
 To interact with your local node, we will use
 [the Substrate Developer Hub Front-End Template](https://github.com/substrate-developer-hub/substrate-front-end-template),
-which is a collection of UI components that have been designed with common uses cases in mind.
+which is a collection of UI components that have been designed with common use cases in mind.
 
 To get started with the Front-End Template, clone its repository and
 [follow the simple steps to run it locally](https://github.com/substrate-developer-hub/substrate-front-end-template#using-the-template).
