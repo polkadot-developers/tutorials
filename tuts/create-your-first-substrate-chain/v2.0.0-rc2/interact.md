@@ -85,7 +85,7 @@ like Alice and Bob, already have funds!
 
 ![Account Table](../assets/accts-prefunded.png)
 
-Beneath the account table there is a Transfer component that you can use to transfer some funds from
+Beneath the account table there is a Transfer component that you can use to transfer funds from
 one account to another. Take note of the info box that describes the precision used by the Front-End
 Template; you should transfer at least `1000000000000` to make it easy for you to observe the
 changes you're making.
