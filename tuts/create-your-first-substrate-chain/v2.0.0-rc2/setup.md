@@ -79,5 +79,13 @@ Node Template serves as a good starting point for building on Substrate.
    cargo build --release
    ```
 
-This final compilation can take up to 25 minutes depending on your hardware. In that time, read the
-next section to learn more about Substrate.
+This final compilation can take up to 25 minutes depending on your hardware. So don't wait before
+moving on to the next steps.
+
+## Front-End
+
+In order to interact with your node, you will be running a local instance of
+[the Substrate Developer Hub Front-End Template](https://github.com/substrate-developer-hub/substrate-front-end-template),
+which requires you to have [Node.js](https://nodejs.org/) installed on your computer. You may want
+to use the time that your node is compiling to ensure that your development environment is prepared
+with these dependencies.
