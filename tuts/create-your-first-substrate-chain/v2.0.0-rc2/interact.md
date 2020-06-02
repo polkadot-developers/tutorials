@@ -61,41 +61,72 @@ $ ./target/release/node-template --dev
 If the number after `finalized:` is increasing, your blockchain is producing new blocks and reaching
 consensus about the state they describe!
 
-## Start the Front End
+## Start the Front-End
 
-To interact with the local node we will use the Polkadot-js Apps user interface, often known as
-"Apps" for short. Despite the name, Apps will work with any Substrate-based blockchain including
-ours, not just Polkadot.
+To interact with your local node, we will use
+[the Substrate Developer Hub Front-End Template](https://github.com/substrate-developer-hub/substrate-front-end-template),
+which is a collection of UI components that have been designed with common use cases in mind.
 
-In your web browser, navigate to
-[https://polkadot.js.org/apps](https://polkadot.js.org/apps/#/settings?rpc=ws://127.0.0.1:9944).
-
-On the `Settings` tab ensure that you are connected to a `Local Node` or `ws://127.0.0.1:9944`.
-
-> Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
-> work around is to try another browser, like Chromium. Another option is to
-> [host this interface locally](https://github.com/polkadot-js/apps#development).
+To get started with the Front-End Template, clone its repository and
+[follow the simple steps to run it locally](https://github.com/substrate-developer-hub/substrate-front-end-template#using-the-template).
 
 ## Interact
 
-Select the **Accounts** tab, you will see test accounts that you have access to. Some, like Alice
-and Bob, already have funds!
+Once the Front-End Template is running and loaded in your browser at
+[http://localhost:8000/](http://localhost:8000/), take a moment to explore its components. At the
+top, you will find lots of helpful information about the chain to which you're connected as well as
+an account selector that will let you control the account you use to perform on-chain operations.
 
-![Apps UI with pre-funded accounts](../assets/apps-prefunded.png)
+![Chain Data & Account Selector](../assets/chain-data.png)
 
-You can try to transfer some funds from Alice to Charlie by clicking the "send" button.
+There is also a table that lists
+[the well-known test accounts](/kb/integrate/subkey#well-known-keys) that you have access to. Some,
+like Alice and Bob, already have funds!
+
+![Account Table](../assets/accts-prefunded.png)
+
+Beneath the account table there is a Transfer component that you can use to transfer funds from
+one account to another. Take note of the info box that describes the precision used by the Front-End
+Template; you should transfer at least `1000000000000` to make it easy for you to observe the
+changes you're making.
 
 ![Balance Transfer](../assets/apps-transfer.png)
 
-If everything went successfully, you should see some popup notifications claiming "Extrinsic
-Success", and of course Charlie's balance will increase.
+Notice that the table of accounts is dynamic and that the account balances are updated as soon as
+the transfer is processed.
 
-## Create Your Own Account
+### Runtime Metadata
 
-You can create your own account by selecting the `+ Add Account` button. It won't have any tokens
-yet, but you can send some from Alice or any other pre-funded account. Only you (and your browser)
-will know the private key for your own account which means nobody can transfer those tokens except
-you.
+The Front-End Template exposes many helpful features and you should explore all of them while you're
+connected to a local development node. One good way to get started is by clicking the "Show
+Metadata" button at the top of the template page and reviewing
+[the metadata that your runtime exposes](https://www.substrate.io/kb/runtime/metadata).
+
+![Metadata JSON](../assets/metadata.png)
+
+### Pallet Interactor & Events
+
+You can use the runtime metadata to discover a runtime's capabilities. The Front-End Template
+provides a helpful Pallet Interactor component that provides several mechanisms for interacting with
+a Substrate runtime.
+
+![Pallet Interactor & Events](../assets/interactor-events.png)
+
+[Extrinsics](/kb/learn-substrate/extrinsics) are the runtime's callable functions; if you are
+already familiar with blockchain concepts, you can think of them as transactions for now. The Pallet
+Interactor allows you to submit [unsigned](/kb/learn-substrate/extrinsics#unsigned-transactions) or
+[signed](/kb/learn-substrate/extrinsics#signed-transactions) extrinsics and also provides a button
+that makes it easy to invoke an extrinsic by way of
+[the `sudo` function from the Sudo pallet](https://substrate.dev/rustdocs/v2.0.0-rc2/pallet_sudo/enum.Call.html#variant.sudo).
+
+You can select Query interactions to read
+[the values present in your runtime's storage](/kb/runtime/storage). The RPC and Constant options
+provide additional mechanisms for runtime interaction.
+
+Like many blockchains, Substrate chains use [events](/kb/runtime/events) to report the results of
+asynchronous operations. If you have already used the Front-End Template to perform a balance
+transfer as described above, you should see an event for the transfer in the Event component next to
+the Pallet Interactor.
 
 ## Next Steps
 
