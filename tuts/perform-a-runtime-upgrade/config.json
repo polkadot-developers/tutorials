@@ -1,0 +1,14 @@
+{
+	"slug": "config",
+	"lang": "en",
+	"title": "Perform a Runtime Upgrade",
+	"excerpt": "Forklessly upgrade your chain's runtime logic.",
+	"tags": [ "Medium", "2 Hours", "Prerequisites" ],
+	"versions": [ "v2.0.0-alpha.6" ],
+	"menu": [
+		{ "title": "Overview", "slug": "index" },
+		{ "title": "Code Changes", "slug": "code" },
+		{ "title": "Upgrade Transaction", "slug": "transaction" },
+		{ "title": "Storage Migrations", "slug": "migration" }
+	]
+}
