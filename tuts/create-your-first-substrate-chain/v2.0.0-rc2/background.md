@@ -29,7 +29,7 @@ develop. As a result, most blockchain projects are _not_ developed from the grou
 these projects are forked from already existing blockchain repositories. For instance:
 
 - The Bitcoin repository was forked to create: Litecoin, ZCash, Namecoin, Bitcoin Cash, etc...
-- The Ethereum repository was forked to create: Quorum, POA Network, KodakCoin, Musicoin, etc...
+- The Ethereum repository was forked to create: [Quorum](https://www.goquorum.com/), [POA Network](https://www.poa.network/), [KodakCoin](https://www.kodak.com/US/en/kodakone/default.htm), [Musicoin](https://musicoin.org/) and [many more](https://github.com/ethereum/go-ethereum/network/members).
 
 ![Blockchain Project Repository Forks](../assets/forks.png)
 
